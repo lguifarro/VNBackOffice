@@ -1,0 +1,90 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spQRYDetalleUsuarioComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spQRYDetalleUsuarioComercio ( 
+IN PIDUSUARIOCONSULTA INTEGER,
+OUT PIDGRUPO INTEGER,
+OUT PFLAGADMIN INTEGER,
+OUT PLOGINUSUARIO VARCHAR(20),
+OUT PNOMBRE VARCHAR(50),
+OUT PAPELLIDOP VARCHAR(50),
+OUT PEMAIL VARCHAR(50),
+OUT PESTADOUSUARIO VARCHAR(1),
+OUT PFECHAINSERT TIMESTAMP,
+OUT PFECHAULTACTUALIZ TIMESTAMP,
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100)  )
+	SPECIFIC SQMNUC.spQRYDetalleUsuarioComercio
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+P1: BEGIN
+-- Declare cursors
+DECLARE SQLCODE INTEGER DEFAULT 0;
+declare iIdUsuarioConsulta INTEGER;
+declare iFlagAdmin INTEGER;
+declare iIdGrupo INTEGER;
+declare sLogin varchar(20);
+declare sNombre varchar(50);
+declare sApellidoP varchar(50);
+declare sPassword varchar(20);
+declare sEmail varchar(50);
+declare sEstado char(1);
+declare dFechaInsert TIMESTAMP;
+declare dFechaUltActualiz TIMESTAMP;
+
+DECLARE CURUSUARIO CURSOR FOR 
+	SELECT FLAGADMIN, IDGRUPO, LOGIN, NOMBRE, APELLIDOP, EMAIL, ESTADO, FECHAINSERT, FECHAULTACTUALIZ 
+	FROM SQMNUC.USUARIO_COMERCIO_CONS
+	WHERE IDUSUARIO = PIDUSUARIOCONSULTA;
+
+--INSERT INTO SQMNUC.ANALISIS (FECHAINSERT, DATA) VALUES  (CURRENT TIMESTAMP, ' USUARIO A BUSCAR =');
+--INSERT INTO SQMNUC.ANALISIS (FECHAINSERT, DATA) VALUES  (CURRENT TIMESTAMP, CAST(PIDUSUARIOCONSULTA AS VARCHAR(2)));
+--INSERT INTO SQMNUC.ANALISIS (FECHAINSERT, DATA) VALUES  (CURRENT TIMESTAMP, CAST(99 AS VARCHAR(2)));
+
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+	FETCH CURUSUARIO INTO
+	iFlagAdmin, iIdGrupo, sLogin, sNombre, sApellidoP, sEmail, sEstado, dFechaInsert, dFechaUltActualiz; 
+
+IF (SQLCODE = 0) THEN
+
+--INSERT INTO SQMNUC.ANALISIS (FECHAINSERT, DATA) VALUES  (CURRENT TIMESTAMP, ' ENCONTRO RESULTADOS =' || RTRIM(CAST( AS VARCHAR(2))));
+
+	SET PIDGRUPO = iIdGrupo;
+	SET PFLAGADMIN = iFlagAdmin;
+	SET PLOGINUSUARIO = sLogin;
+	SET PNOMBRE = sNombre;
+	SET PAPELLIDOP = sApellidoP;
+	SET PEMAIL = sEmail;
+	SET PESTADOUSUARIO = sEstado;
+
+	SET PFECHAINSERT = dFechaInsert;
+	SET PFECHAULTACTUALIZ = dFechaInsert;
+	--SET PNOMCOMERCIO = sNomComercio;
+	SET PCR='00';
+	SET PDESCERROR = 'CONSULTA OK';
+
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'USUARIO NO ENCONTRADO';
+	SET PCR='01';
+END IF;
+close CURUSUARIO;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spQRYDetalleUsuarioComercio TO PUBLIC
+@

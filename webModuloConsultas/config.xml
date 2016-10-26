@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config version="0.1">
+	<hosts>
+		<host id="9171" ip="172.17.4.132" name="Servicios Visanet" idFormat="NUC" state="1"/>
+		<host id="5001" ip="172.17.4.132" name="Servicios DB2" idFormat="DB2" state="0"/>
+	</hosts>
+	<formats>
+		<format id="NUC" name="Trama recibida desde el Nucleo">
+			<formatField id="LENGTH" name="Longitud" len="2" pos="1" type="LH" included="1" />
+			<formatField id="SERVICE" name="Servicio" len="2" pos="10" type="LH" included="0" />
+			<formatField id="COMMAND" name="Comando" len="1" pos="5" type="" included="0" />
+		</format>
+		<format id="DB2" name="Trama recibida desde el Nucleo">
+			<formatField id="LENGTH" name="Longitud" len="2" pos="1" type="LH" included="1" />
+			<formatField id="SERVICE" name="Servicio" len="2" pos="10" type="LH" included="0" />
+			<formatField id="COMMAND" name="Comando" len="1" pos="5" type="" included="0" />
+		</format>
+	</formats>
+	<services>
+		<service id="150" name="Pos Servicio Visanet">
+			<serviceStep id="1" OK="0" NOK="0" command="A1" library="102" name="Paso 1"/>
+		</service>
+	</services>
+	<libraries>
+		<library id="0" name="dllNucleo" className="clsNucleo" methodName="NucleoIn"/>
+		<library id="101" name="dllPosContometro" className="clsTrama" methodName="TramaIn"/>
+		<library id="102" name="dllVisanetInsumos" className="ComClassUno" methodName="paso1"/>
+	</libraries>
+</config>

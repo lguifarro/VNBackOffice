@@ -1,0 +1,13 @@
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\webModuloConsultas\bin\webModuloConsultas.dll
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\webModuloConsultas\bin\webModuloConsultas.pdb
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\webModuloConsultas\bin\webModuloConsultas.xml
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\webModuloConsultas\bin\ClsConsultas.dll
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\webModuloConsultas\bin\ClsConsultas.pdb
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\webModuloConsultas\bin\ClsConsultas.xml
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\webModuloConsultas\obj\Release\ResolveAssemblyReference.cache
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\webModuloConsultas\obj\Release\webModuloConsultas.Resources.resources
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\webModuloConsultas\obj\Release\GenerateResource.read.1.tlog
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\webModuloConsultas\obj\Release\GenerateResource.write.1.tlog
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\webModuloConsultas\obj\Release\webModuloConsultas.dll
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\webModuloConsultas\obj\Release\webModuloConsultas.xml
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\webModuloConsultas\obj\Release\webModuloConsultas.pdb

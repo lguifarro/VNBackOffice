@@ -1,0 +1,56 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTUpdateGrupoComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTUpdateGrupoComercio ( 
+IN PIDGRUPOCONSULTA INTEGER,
+IN PCMCIOID INTEGER,
+IN PCODGRUPO VARCHAR(11),
+IN PNOMGRUPO VARCHAR(50),
+IN PDESCGRUPO VARCHAR(100),
+IN PFLAGRUC INTEGER,
+IN PRUC DECIMAL(15),
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTUpdateGrupoComercio 
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+P1: BEGIN
+
+IF EXISTS (SELECT IDGRUPO FROM SQMNUC.GRUPO_COMERCIO WHERE IDGRUPO = PIDGRUPOCONSULTA) THEN
+
+	UPDATE SQMNUC.GRUPO_COMERCIO
+	SET
+		NOMBRE_GRUPO = PNOMGRUPO, 
+		COD_GRUPO = PCODGRUPO, 
+		DESC_GRUPO = PDESCGRUPO, 
+		FLAG_RUC = PFLAGRUC, 
+		RUC = PRUC, 
+		CMCIO_ID = PCMCIOID,
+		FECHAULTACTUALIZ = CURRENT TIMESTAMP
+	WHERE IDGRUPO = PIDGRUPOCONSULTA;
+
+	SET PDESCERROR = 'ACTUALIZACION OK';
+	SET PCR='00';
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'GRUPO NO ENCONTRADO';
+	SET PCR='01';
+END IF;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTUpdateGrupoComercio TO PUBLIC
+@

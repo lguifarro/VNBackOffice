@@ -1,0 +1,84 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spQRYServicioEmpresa
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spQRYServicioEmpresa (
+IN PIDSERVICIO INTEGER, 
+IN PIDEMPRESA INTEGER, 
+IN PNOMSERVICIO VARCHAR(50), 
+IN PIDUSUARIO INTEGER, 
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100))
+
+	SPECIFIC "SQMNUC".spQRYServicioEmpresa
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+P1: BEGIN
+DECLARE V_DYNAMIC VARCHAR(1000);
+DECLARE V_SQL VARCHAR(1000);
+DECLARE V_SQL_SELECT VARCHAR(1000);
+DECLARE V_SQL_WHERE VARCHAR(1000);
+
+-- Declare cursors
+DECLARE CURUSUARIO CURSOR WITH RETURN FOR V_DYNAMIC;
+
+SET V_SQL_SELECT= '';
+SET V_SQL_WHERE = '';
+
+SET V_SQL_SELECT = 'SELECT SE.SERVI_CODIGO, SE.CMCIO_ID, S.SERVI_NOMBRE FROM SQMNUC.SERVICIOXEMPRESA SE, SQMNUC.SERVICIO S';
+
+	SET V_SQL_WHERE =' WHERE SE.SERVI_CODIGO = S.SERVI_CODIGO ';
+	IF RTRIM(COALESCE(PIDSERVICIO,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+	
+		SET V_SQL_WHERE = V_SQL_WHERE || ' SE.SERVI_CODIGO =' || RTRIM(CAST(CAST(PIDSERVICIO AS CHAR(3)) AS VARCHAR(3))) || '';
+	END IF;
+
+	IF RTRIM(COALESCE(PIDEMPRESA,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+	
+		SET V_SQL_WHERE = V_SQL_WHERE || ' SE.CMCIO_ID =' || RTRIM(CAST(CAST(PIDEMPRESA AS CHAR(3)) AS VARCHAR(3))) || '';
+	END IF;
+	IF RTRIM(COALESCE(PNOMSERVICIO,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+	
+		SET V_SQL_WHERE = V_SQL_WHERE || ' S.SERVI_NOMBRE LIKE ''%' || PNOMSERVICIO || '%''';
+	END IF;
+
+
+SET V_SQL = V_SQL_SELECT || V_SQL_WHERE;
+
+PREPARE V_DYNAMIC FROM V_SQL;
+
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+
+	SET PCR = '00';
+	SET PDESCERROR = 'CONSULTA OK';
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spQRYServicioEmpresa TO PUBLIC
+@

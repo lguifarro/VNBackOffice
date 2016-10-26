@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{8C4C699A-6B33-4C19-9B2E-7FA75B7D464C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>webModuloConsultas</RootNamespace>
+    <AssemblyName>webModuloConsultas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>webModuloConsultas.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>webModuloConsultas.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="IBM.Data.DB2, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\SkinFile\Login.css" />
+    <Content Include="App_Themes\SkinFile\MasterPage.css" />
+    <Content Include="App_Themes\SkinFile\StyleSheet.css" />
+    <Content Include="frmConsulta.aspx" />
+    <Content Include="frmConsultaComercio.aspx" />
+    <Content Include="frmConsultaVisanet.aspx" />
+    <Content Include="frmLogin.aspx" />
+    <Content Include="frmLoginComercio.aspx" />
+    <Content Include="frmLoginVisanet.aspx" />
+    <Content Include="frmMANTComUsuarioComercio.aspx" />
+    <Content Include="frmMantEmpGrupoComercio.aspx" />
+    <Content Include="frmMantEmpUsuarioComercio.aspx" />
+    <Content Include="frmMANTGrupoComercio.aspx" />
+    <Content Include="frmMANTTarifaEmpresa.aspx" />
+    <Content Include="frmMANTUsuarioComercio.aspx" />
+    <Content Include="frmMANTUsuarioVisanet.aspx" />
+    <Content Include="frmQRYComercioConsulta.aspx" />
+    <Content Include="frmQRYComUsuarioComercio.aspx" />
+    <Content Include="frmQRYEmpComercioConsulta.aspx" />
+    <Content Include="frmQRYEmpGrupoComercio.aspx" />
+    <Content Include="frmQRYEmpServicioConsulta.aspx" />
+    <Content Include="frmQRYEmpUsuarioComercio.aspx" />
+    <Content Include="frmQRYGrupoComercio.aspx" />
+    <Content Include="frmQRYServicioConsulta.aspx" />
+    <Content Include="frmQRYServicioEmpresa.aspx" />
+    <Content Include="frmQRYUsuarioComercio.aspx" />
+    <Content Include="frmQRYUsuarioVisanet.aspx" />
+    <Content Include="frmQRYTarifaEmpresa.aspx" />
+    <Content Include="frmTotalEmpresaFecha.aspx" />
+    <Content Include="frmTotales.aspx" />
+    <Content Include="Imagenes\arrow_left.png" />
+    <Content Include="Imagenes\arrow_right.png" />
+    <Content Include="Imagenes\imgCalendario.png" />
+    <Content Include="Imagenes\imgEdit.png" />
+    <Content Include="Imagenes\imgNuevo.png" />
+    <Content Include="Imagenes\NVO.visa-logo.jpg" />
+    <Content Include="Imagenes\page-first-icon.png" />
+    <Content Include="Imagenes\page-last-icon.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClsColumna.vb" />
+    <Compile Include="ClsEmpresa.vb" />
+    <Compile Include="ClsEstado.vb" />
+    <Compile Include="ClsFiltro.vb" />
+    <Compile Include="ClsFiltroEspecial.vb" />
+    <Compile Include="ClsListaColumna.vb" />
+    <Compile Include="ClsListaEmpresa.vb" />
+    <Compile Include="ClsListaEstado.vb" />
+    <Compile Include="ClsListaFiltro.vb" />
+    <Compile Include="ClsListaFiltroEspecial.vb" />
+    <Compile Include="ClsListaQuery.vb" />
+    <Compile Include="ClsListaServicio.vb" />
+    <Compile Include="ClsQuery.vb" />
+    <Compile Include="ClsService.vb" />
+    <Compile Include="ClsUsuarioSesion.vb" />
+    <Compile Include="frmConsulta.aspx.designer.vb">
+      <DependentUpon>frmConsulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsulta.aspx.vb">
+      <DependentUpon>frmConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmConsultaComercio.aspx.designer.vb">
+      <DependentUpon>frmConsultaComercio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaComercio.aspx.vb">
+      <DependentUpon>frmConsultaComercio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmConsultaVisanet.aspx.designer.vb">
+      <DependentUpon>frmConsultaVisanet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaVisanet.aspx.vb">
+      <DependentUpon>frmConsultaVisanet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmLogin.aspx.designer.vb">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.aspx.vb">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmLoginComercio.aspx.designer.vb">
+      <DependentUpon>frmLoginComercio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoginComercio.aspx.vb">
+      <DependentUpon>frmLoginComercio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmLoginVisanet.aspx.designer.vb">
+      <DependentUpon>frmLoginVisanet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoginVisanet.aspx.vb">
+      <DependentUpon>frmLoginVisanet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmMANTComUsuarioComercio.aspx.designer.vb">
+      <DependentUpon>frmMANTComUsuarioComercio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmMANTComUsuarioComercio.aspx.vb">
+      <DependentUpon>frmMANTComUsuarioComercio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmMantEmpGrupoComercio.aspx.designer.vb">
+      <DependentUpon>frmMantEmpGrupoComercio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantEmpGrupoComercio.aspx.vb">
+      <DependentUpon>frmMantEmpGrupoComercio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmMantEmpUsuarioComercio.aspx.designer.vb">
+      <DependentUpon>frmMantEmpUsuarioComercio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantEmpUsuarioComercio.aspx.vb">
+      <DependentUpon>frmMantEmpUsuarioComercio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmMANTGrupoComercio.aspx.designer.vb">
+      <DependentUpon>frmMANTGrupoComercio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmMANTGrupoComercio.aspx.vb">
+      <DependentUpon>frmMANTGrupoComercio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmMANTTarifaEmpresa.aspx.designer.vb">
+      <DependentUpon>frmMANTTarifaEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmMANTTarifaEmpresa.aspx.vb">
+      <DependentUpon>frmMANTTarifaEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmMANTUsuarioComercio.aspx.designer.vb">
+      <DependentUpon>frmMANTUsuarioComercio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmMANTUsuarioComercio.aspx.vb">
+      <DependentUpon>frmMANTUsuarioComercio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmMANTUsuarioVisanet.aspx.designer.vb">
+      <DependentUpon>frmMANTUsuarioVisanet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmMANTUsuarioVisanet.aspx.vb">
+      <DependentUpon>frmMANTUsuarioVisanet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmQRYComercioConsulta.aspx.designer.vb">
+      <DependentUpon>frmQRYComercioConsulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmQRYComercioConsulta.aspx.vb">
+      <DependentUpon>frmQRYComercioConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmQRYComUsuarioComercio.aspx.designer.vb">
+      <DependentUpon>frmQRYComUsuarioComercio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmQRYComUsuarioComercio.aspx.vb">
+      <DependentUpon>frmQRYComUsuarioComercio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmQRYEmpComercioConsulta.aspx.designer.vb">
+      <DependentUpon>frmQRYEmpComercioConsulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmQRYEmpComercioConsulta.aspx.vb">
+      <DependentUpon>frmQRYEmpComercioConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmQRYEmpGrupoComercio.aspx.designer.vb">
+      <DependentUpon>frmQRYEmpGrupoComercio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmQRYEmpGrupoComercio.aspx.vb">
+      <DependentUpon>frmQRYEmpGrupoComercio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmQRYEmpServicioConsulta.aspx.designer.vb">
+      <DependentUpon>frmQRYEmpServicioConsulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmQRYEmpServicioConsulta.aspx.vb">
+      <DependentUpon>frmQRYEmpServicioConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmQRYEmpUsuarioComercio.aspx.designer.vb">
+      <DependentUpon>frmQRYEmpUsuarioComercio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmQRYEmpUsuarioComercio.aspx.vb">
+      <DependentUpon>frmQRYEmpUsuarioComercio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmQRYGrupoComercio.aspx.designer.vb">
+      <DependentUpon>frmQRYGrupoComercio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmQRYGrupoComercio.aspx.vb">
+      <DependentUpon>frmQRYGrupoComercio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmQRYServicioConsulta.aspx.designer.vb">
+      <DependentUpon>frmQRYServicioConsulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmQRYServicioConsulta.aspx.vb">
+      <DependentUpon>frmQRYServicioConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmQRYServicioEmpresa.aspx.designer.vb">
+      <DependentUpon>frmQRYServicioEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmQRYServicioEmpresa.aspx.vb">
+      <DependentUpon>frmQRYServicioEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmQRYUsuarioComercio.aspx.designer.vb">
+      <DependentUpon>frmQRYUsuarioComercio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmQRYUsuarioComercio.aspx.vb">
+      <DependentUpon>frmQRYUsuarioComercio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmQRYUsuarioVisanet.aspx.designer.vb">
+      <DependentUpon>frmQRYUsuarioVisanet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmQRYUsuarioVisanet.aspx.vb">
+      <DependentUpon>frmQRYUsuarioVisanet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmQRYTarifaEmpresa.aspx.designer.vb">
+      <DependentUpon>frmQRYTarifaEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmQRYTarifaEmpresa.aspx.vb">
+      <DependentUpon>frmQRYTarifaEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmTotalEmpresaFecha.aspx.designer.vb">
+      <DependentUpon>frmTotalEmpresaFecha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmTotalEmpresaFecha.aspx.vb">
+      <DependentUpon>frmTotalEmpresaFecha.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmTotales.aspx.designer.vb">
+      <DependentUpon>frmTotales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmTotales.aspx.vb">
+      <DependentUpon>frmTotales.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Login.Master.designer.vb">
+      <DependentUpon>Login.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Login.Master.vb">
+      <DependentUpon>Login.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modConfig.vb" />
+    <Compile Include="modDB.vb" />
+    <Compile Include="modForm.vb" />
+    <Compile Include="modMain.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Principal.Master.designer.vb">
+      <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.Master.vb">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrincipalComercio.Master.designer.vb">
+      <DependentUpon>PrincipalComercio.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipalComercio.Master.vb">
+      <DependentUpon>PrincipalComercio.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrincipalVisanet.Master.designer.vb">
+      <DependentUpon>PrincipalVisanet.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipalVisanet.Master.vb">
+      <DependentUpon>PrincipalVisanet.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\SkinFile\SkinFile.skin" />
+    <Content Include="Login.Master" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Principal.Master" />
+    <Content Include="PrincipalComercio.Master" />
+    <Content Include="PrincipalVisanet.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClsConsultaDB\ClsConsultas.vbproj">
+      <Project>{2181AA34-4230-4A4A-B3C1-779D55427E45}</Project>
+      <Name>ClsConsultas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61364</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

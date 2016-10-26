@@ -1,0 +1,54 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTUpdateRangoTarifa
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTUpdateRangoTarifa ( 
+IN PIDTARIFA INTEGER,
+IN PCMCIOID INTEGER,
+IN PDESDE BIGINT,
+IN PHASTA BIGINT,
+IN PTARIFA DOUBLE,
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTUpdateRangoTarifa 
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+P1: BEGIN
+
+IF EXISTS (SELECT CMCIO_ID FROM SQMNUC.TARIFA_TRX WHERE CMCIO_ID = PCMCIOID AND IDTARIFA = PIDTARIFA) THEN
+
+	UPDATE SQMNUC.TARIFA_TRX SET
+	TRX_DESDE = PDESDE,
+	TRX_HASTA = PHASTA,
+	TARIFA = PTARIFA, 
+	FECHAULTACTUALIZ = CURRENT TIMESTAMP
+	WHERE
+	CMCIO_ID = PCMCIOID AND IDTARIFA = PIDTARIFA;
+
+	SET PDESCERROR = 'REGISTRO OK';
+	SET PCR='00';
+
+ELSE
+	
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'USUARIO YA EXISTE';
+	SET PCR='01';
+	
+END IF;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTUpdateRangoTarifa TO PUBLIC
+@

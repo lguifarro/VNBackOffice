@@ -1,0 +1,4220 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+webModuloConsultas
+</name>
+</assembly>
+<members>
+<member name="F:webModuloConsultas.frmQRYServicioEmpresa.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioEmpresa.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioEmpresa.lGrupo">
+	<summary>
+lGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioEmpresa.cmbEmpresa">
+	<summary>
+cmbEmpresa control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioEmpresa.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioEmpresa.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioEmpresa.cmbServicio">
+	<summary>
+cmbServicio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioEmpresa.bAdd">
+	<summary>
+bAdd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioEmpresa.bRemove">
+	<summary>
+bRemove control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioEmpresa.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioEmpresa.gridServicio">
+	<summary>
+gridServicio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.lGrupo">
+	<summary>
+lGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.cmbEmpresa">
+	<summary>
+cmbEmpresa control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.Label7">
+	<summary>
+Label7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.rbTipoCalculo">
+	<summary>
+rbTipoCalculo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.rbMoneda">
+	<summary>
+rbMoneda control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.bGrabarTarifa">
+	<summary>
+bGrabarTarifa control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.Label8">
+	<summary>
+Label8 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.lIdTarifa">
+	<summary>
+lIdTarifa control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.Label6">
+	<summary>
+Label6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.txtDesde">
+	<summary>
+txtDesde control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.Label4">
+	<summary>
+Label4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.txtHasta">
+	<summary>
+txtHasta control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.Label5">
+	<summary>
+Label5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.txtTarifa">
+	<summary>
+txtTarifa control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.bNuevo">
+	<summary>
+bNuevo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.bGrabar">
+	<summary>
+bGrabar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYTarifaEmpresa.gridTarifa">
+	<summary>
+gridTarifa control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.lCodComercio">
+	<summary>
+lCodComercio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.txtCodComercio">
+	<summary>
+txtCodComercio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.lNumTerminal">
+	<summary>
+lNumTerminal control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.txtNumTerminal">
+	<summary>
+txtNumTerminal control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.lIdTran">
+	<summary>
+lIdTran control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.txtIdTran">
+	<summary>
+txtIdTran control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.txtFechaINI">
+	<summary>
+txtFechaINI control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.imgFechaINI">
+	<summary>
+imgFechaINI control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.txtFechaINI_CalendarExtender">
+	<summary>
+txtFechaINI_CalendarExtender control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.txtFechaFin">
+	<summary>
+txtFechaFin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.imgFechaFIN">
+	<summary>
+imgFechaFIN control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.txtFechaFIN_CalendarExtender">
+	<summary>
+txtFechaFIN_CalendarExtender control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.cmbServicio">
+	<summary>
+cmbServicio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.Label4">
+	<summary>
+Label4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.cmbEstado">
+	<summary>
+cmbEstado control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.lDatosApp1">
+	<summary>
+lDatosApp1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.txtDatosApp1">
+	<summary>
+txtDatosApp1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.lDatosApp2">
+	<summary>
+lDatosApp2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.txtDatosApp2">
+	<summary>
+txtDatosApp2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.lDatosApp3">
+	<summary>
+lDatosApp3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.txtDatosApp3">
+	<summary>
+txtDatosApp3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.lDatosApp4">
+	<summary>
+lDatosApp4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.txtDatosApp4">
+	<summary>
+txtDatosApp4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.lDatosApp5">
+	<summary>
+lDatosApp5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.txtDatosApp5">
+	<summary>
+txtDatosApp5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.lDatosApp6">
+	<summary>
+lDatosApp6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.txtDatosApp6">
+	<summary>
+txtDatosApp6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.lDatosApp7">
+	<summary>
+lDatosApp7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.txtDatosApp7">
+	<summary>
+txtDatosApp7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.lDatosApp8">
+	<summary>
+lDatosApp8 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.txtDatosApp8">
+	<summary>
+txtDatosApp8 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.bConsultar">
+	<summary>
+bConsultar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.bExportar">
+	<summary>
+bExportar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsulta.gridTran">
+	<summary>
+gridTran control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpGrupoComercio.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpGrupoComercio.lNombreGrupo">
+	<summary>
+lNombreGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpGrupoComercio.txtGrupo">
+	<summary>
+txtGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpGrupoComercio.lRUC">
+	<summary>
+lRUC control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpGrupoComercio.txtRUC">
+	<summary>
+txtRUC control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpGrupoComercio.bConsultar">
+	<summary>
+bConsultar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpGrupoComercio.bExportar">
+	<summary>
+bExportar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpGrupoComercio.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpGrupoComercio.gridGrupo">
+	<summary>
+gridGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.lIdUsuario">
+	<summary>
+lIdUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.Label7">
+	<summary>
+Label7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.cmbGrupoComercio">
+	<summary>
+cmbGrupoComercio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.Label9">
+	<summary>
+Label9 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.lIdProveedor">
+	<summary>
+lIdProveedor control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.txtLogin">
+	<summary>
+txtLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.Label10">
+	<summary>
+Label10 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.txtPassword">
+	<summary>
+txtPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.bResetPwd">
+	<summary>
+bResetPwd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.Label11">
+	<summary>
+Label11 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.txtValidaPassword">
+	<summary>
+txtValidaPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.Label4">
+	<summary>
+Label4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.txtNombre">
+	<summary>
+txtNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.Label5">
+	<summary>
+Label5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.txtAPaterno">
+	<summary>
+txtAPaterno control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.Label6">
+	<summary>
+Label6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.Label8">
+	<summary>
+Label8 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.rbTipoUsuario">
+	<summary>
+rbTipoUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.Label16">
+	<summary>
+Label16 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.rbEstado">
+	<summary>
+rbEstado control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.Label18">
+	<summary>
+Label18 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.txtFechaInsert">
+	<summary>
+txtFechaInsert control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.Label19">
+	<summary>
+Label19 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.txtFechaUltActualiz">
+	<summary>
+txtFechaUltActualiz control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.bActualizar">
+	<summary>
+bActualizar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.bNuevo">
+	<summary>
+bNuevo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.bCambiaPWD">
+	<summary>
+bCambiaPWD control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpUsuarioComercio.bCancelar">
+	<summary>
+bCancelar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.lIdUsuario">
+	<summary>
+lIdUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.txtLogin">
+	<summary>
+txtLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.Label10">
+	<summary>
+Label10 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.txtPassword">
+	<summary>
+txtPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.Label4">
+	<summary>
+Label4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.txtNombre">
+	<summary>
+txtNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.Label5">
+	<summary>
+Label5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.txtAPaterno">
+	<summary>
+txtAPaterno control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.Label6">
+	<summary>
+Label6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.Label8">
+	<summary>
+Label8 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.txtNivel">
+	<summary>
+txtNivel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.Label16">
+	<summary>
+Label16 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.rbEstado">
+	<summary>
+rbEstado control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.Label18">
+	<summary>
+Label18 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.txtFechaInsert">
+	<summary>
+txtFechaInsert control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.Label19">
+	<summary>
+Label19 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.txtFechaUltActualiz">
+	<summary>
+txtFechaUltActualiz control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.bActualizar">
+	<summary>
+bActualizar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.bNuevo">
+	<summary>
+bNuevo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioVisanet.bCancelar">
+	<summary>
+bCancelar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioConsulta.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioConsulta.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioConsulta.lGrupo">
+	<summary>
+lGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioConsulta.cmbGrupo">
+	<summary>
+cmbGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioConsulta.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioConsulta.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioConsulta.cmbServicio">
+	<summary>
+cmbServicio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioConsulta.bAdd">
+	<summary>
+bAdd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioConsulta.bRemove">
+	<summary>
+bRemove control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioConsulta.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYServicioConsulta.gridGrupo">
+	<summary>
+gridGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioComercio.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioComercio.lLoginUsuario">
+	<summary>
+lLoginUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioComercio.txtLoginUsuario">
+	<summary>
+txtLoginUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioComercio.lNombreUsuario">
+	<summary>
+lNombreUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioComercio.txtNomUsuario">
+	<summary>
+txtNomUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioComercio.lAPaterno">
+	<summary>
+lAPaterno control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioComercio.txtAPaterno">
+	<summary>
+txtAPaterno control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioComercio.lEmail">
+	<summary>
+lEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioComercio.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioComercio.bConsultar">
+	<summary>
+bConsultar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioComercio.bExportar">
+	<summary>
+bExportar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioComercio.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioComercio.gridUsuario">
+	<summary>
+gridUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalComercio.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalComercio.head">
+	<summary>
+head control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalComercio.ScriptManager1">
+	<summary>
+ScriptManager1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalComercio.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalComercio.Image1">
+	<summary>
+Image1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalComercio.lLogin">
+	<summary>
+lLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalComercio.menuPrincipal">
+	<summary>
+menuPrincipal control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalComercio.mnuOpc">
+	<summary>
+mnuOpc control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalComercio.LinkButton1">
+	<summary>
+LinkButton1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalComercio.CPHPrincipal">
+	<summary>
+CPHPrincipal control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.lIdGrupo">
+	<summary>
+lIdGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.Label6">
+	<summary>
+Label6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.lIdEmpresa">
+	<summary>
+lIdEmpresa control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.txtCodGrupo">
+	<summary>
+txtCodGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.Label10">
+	<summary>
+Label10 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.txtNomGrupo">
+	<summary>
+txtNomGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.Label4">
+	<summary>
+Label4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.txtDescGrupo">
+	<summary>
+txtDescGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.Label5">
+	<summary>
+Label5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.txtRUC">
+	<summary>
+txtRUC control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.Label16">
+	<summary>
+Label16 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.rbFlagRUC">
+	<summary>
+rbFlagRUC control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.Label18">
+	<summary>
+Label18 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.txtFechaInsert">
+	<summary>
+txtFechaInsert control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.Label19">
+	<summary>
+Label19 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.txtFechaUltActualiz">
+	<summary>
+txtFechaUltActualiz control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.bActualizar">
+	<summary>
+bActualizar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.bNuevo">
+	<summary>
+bNuevo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMantEmpGrupoComercio.bCancelar">
+	<summary>
+bCancelar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.lIdUsuario">
+	<summary>
+lIdUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.Label7">
+	<summary>
+Label7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.cmbGrupoComercio">
+	<summary>
+cmbGrupoComercio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.Label9">
+	<summary>
+Label9 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.lIdProveedor">
+	<summary>
+lIdProveedor control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.txtLogin">
+	<summary>
+txtLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.Label10">
+	<summary>
+Label10 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.txtPassword">
+	<summary>
+txtPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.bResetPwd">
+	<summary>
+bResetPwd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.Label11">
+	<summary>
+Label11 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.txtValidaPassword">
+	<summary>
+txtValidaPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.Label4">
+	<summary>
+Label4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.txtNombre">
+	<summary>
+txtNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.Label5">
+	<summary>
+Label5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.txtAPaterno">
+	<summary>
+txtAPaterno control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.Label6">
+	<summary>
+Label6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.Label8">
+	<summary>
+Label8 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.rbTipoUsuario">
+	<summary>
+rbTipoUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.Label16">
+	<summary>
+Label16 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.rbEstado">
+	<summary>
+rbEstado control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.Label18">
+	<summary>
+Label18 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.txtFechaInsert">
+	<summary>
+txtFechaInsert control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.Label19">
+	<summary>
+Label19 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.txtFechaUltActualiz">
+	<summary>
+txtFechaUltActualiz control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.bActualizar">
+	<summary>
+bActualizar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.bNuevo">
+	<summary>
+bNuevo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.bCambiaPWD">
+	<summary>
+bCambiaPWD control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTUsuarioComercio.bCancelar">
+	<summary>
+bCancelar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLoginComercio.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLoginComercio.txtUsuarioLogin">
+	<summary>
+txtUsuarioLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLoginComercio.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLoginComercio.txtPasswordLogin">
+	<summary>
+txtPasswordLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLoginComercio.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLoginComercio.bAceptar">
+	<summary>
+bAceptar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLoginComercio.bCancelar">
+	<summary>
+bCancelar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLoginVisanet.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLoginVisanet.txtUsuarioLogin">
+	<summary>
+txtUsuarioLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLoginVisanet.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLoginVisanet.txtPasswordLogin">
+	<summary>
+txtPasswordLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLoginVisanet.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLoginVisanet.bAceptar">
+	<summary>
+bAceptar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLoginVisanet.bCancelar">
+	<summary>
+bCancelar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpComercioConsulta.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpComercioConsulta.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpComercioConsulta.lGrupo">
+	<summary>
+lGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpComercioConsulta.cmbGrupo">
+	<summary>
+cmbGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpComercioConsulta.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpComercioConsulta.gridGrupo">
+	<summary>
+gridGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpComercioConsulta.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpComercioConsulta.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpComercioConsulta.txtListaCodigos">
+	<summary>
+txtListaCodigos control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpComercioConsulta.txtLog">
+	<summary>
+txtLog control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpComercioConsulta.bAdd">
+	<summary>
+bAdd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpComercioConsulta.bRemove">
+	<summary>
+bRemove control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpUsuarioComercio.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpUsuarioComercio.lLoginUsuario">
+	<summary>
+lLoginUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpUsuarioComercio.txtLoginUsuario">
+	<summary>
+txtLoginUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpUsuarioComercio.lNombreUsuario">
+	<summary>
+lNombreUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpUsuarioComercio.txtNomUsuario">
+	<summary>
+txtNomUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpUsuarioComercio.lAPaterno">
+	<summary>
+lAPaterno control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpUsuarioComercio.txtAPaterno">
+	<summary>
+txtAPaterno control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpUsuarioComercio.lEmail">
+	<summary>
+lEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpUsuarioComercio.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpUsuarioComercio.bConsultar">
+	<summary>
+bConsultar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpUsuarioComercio.bExportar">
+	<summary>
+bExportar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpUsuarioComercio.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpUsuarioComercio.gridUsuario">
+	<summary>
+gridUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioVisanet.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioVisanet.lLoginUsuario">
+	<summary>
+lLoginUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioVisanet.txtLoginUsuario">
+	<summary>
+txtLoginUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioVisanet.lNombreUsuario">
+	<summary>
+lNombreUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioVisanet.txtNomUsuario">
+	<summary>
+txtNomUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioVisanet.lAPaterno">
+	<summary>
+lAPaterno control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioVisanet.txtAPaterno">
+	<summary>
+txtAPaterno control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioVisanet.lEmail">
+	<summary>
+lEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioVisanet.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioVisanet.bConsultar">
+	<summary>
+bConsultar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioVisanet.bExportar">
+	<summary>
+bExportar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioVisanet.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYUsuarioVisanet.gridUsuario">
+	<summary>
+gridUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLogin.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLogin.txtCodComercioLogin">
+	<summary>
+txtCodComercioLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLogin.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLogin.txtUsuarioLogin">
+	<summary>
+txtUsuarioLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLogin.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLogin.txtPasswordLogin">
+	<summary>
+txtPasswordLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLogin.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLogin.bAceptar">
+	<summary>
+bAceptar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmLogin.bCancelar">
+	<summary>
+bCancelar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.txtFechaINI">
+	<summary>
+txtFechaINI control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.txtFechaINI_CalendarExtender">
+	<summary>
+txtFechaINI_CalendarExtender control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.imgFechaINI">
+	<summary>
+imgFechaINI control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.txtFechaFin">
+	<summary>
+txtFechaFin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.txtFechaFin_CalendarExtender">
+	<summary>
+txtFechaFin_CalendarExtender control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.imgFechaFIN">
+	<summary>
+imgFechaFIN control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.cmbServicio">
+	<summary>
+cmbServicio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.Label4">
+	<summary>
+Label4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.cmbEstado">
+	<summary>
+cmbEstado control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.bConsultar">
+	<summary>
+bConsultar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.bExportar">
+	<summary>
+bExportar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotalEmpresaFecha.gridTran">
+	<summary>
+gridTran control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.lIdUsuario">
+	<summary>
+lIdUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.Label7">
+	<summary>
+Label7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.txtGrupoComercio">
+	<summary>
+txtGrupoComercio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.txtLogin">
+	<summary>
+txtLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.Label10">
+	<summary>
+Label10 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.txtPassword">
+	<summary>
+txtPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.Label4">
+	<summary>
+Label4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.txtNombre">
+	<summary>
+txtNombre control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.Label5">
+	<summary>
+Label5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.txtAPaterno">
+	<summary>
+txtAPaterno control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.Label6">
+	<summary>
+Label6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.Label8">
+	<summary>
+Label8 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.rbTipoUsuario">
+	<summary>
+rbTipoUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.Label16">
+	<summary>
+Label16 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.rbEstado">
+	<summary>
+rbEstado control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.Label18">
+	<summary>
+Label18 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.txtFechaInsert">
+	<summary>
+txtFechaInsert control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.Label19">
+	<summary>
+Label19 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.txtFechaUltActualiz">
+	<summary>
+txtFechaUltActualiz control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.bActualizar">
+	<summary>
+bActualizar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.bNuevo">
+	<summary>
+bNuevo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTComUsuarioComercio.bCancelar">
+	<summary>
+bCancelar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpServicioConsulta.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpServicioConsulta.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpServicioConsulta.lGrupo">
+	<summary>
+lGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpServicioConsulta.cmbGrupo">
+	<summary>
+cmbGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpServicioConsulta.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpServicioConsulta.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpServicioConsulta.cmbServicio">
+	<summary>
+cmbServicio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpServicioConsulta.bAdd">
+	<summary>
+bAdd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpServicioConsulta.bRemove">
+	<summary>
+bRemove control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpServicioConsulta.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYEmpServicioConsulta.gridGrupo">
+	<summary>
+gridGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="P:webModuloConsultas.My.MyWebExtension.Application">
+	<summary>
+ Returns information about the current application.
+ </summary>
+</member><member name="P:webModuloConsultas.My.MyWebExtension.Computer">
+	<summary>
+ Returns information about the host computer.
+ </summary>
+</member><member name="P:webModuloConsultas.My.MyWebExtension.User">
+	<summary>
+ Returns information for the current Web user.
+ </summary>
+</member><member name="P:webModuloConsultas.My.MyWebExtension.Request">
+	<summary>
+ Returns Request object.
+ </summary>
+</member><member name="P:webModuloConsultas.My.MyWebExtension.Response">
+	<summary>
+ Returns Response object.
+ </summary>
+</member><member name="P:webModuloConsultas.My.MyWebExtension.Log">
+	<summary>
+ Returns the Asp log object.
+ </summary>
+</member><member name="P:webModuloConsultas.My.MyWebExtension.WebServices">
+	<summary>
+ Provides access to WebServices added to this project.
+ </summary>
+</member><member name="T:webModuloConsultas.My.MyWebExtension">
+	<summary>
+ Module used to define the properties that are available in the My Namespace for Web projects.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:webModuloConsultas.PrincipalVisanet.head">
+	<summary>
+head control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalVisanet.ScriptManager1">
+	<summary>
+ScriptManager1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalVisanet.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalVisanet.Image1">
+	<summary>
+Image1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalVisanet.lLogin">
+	<summary>
+lLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalVisanet.menuPrincipal">
+	<summary>
+menuPrincipal control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalVisanet.mnuOpc">
+	<summary>
+mnuOpc control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalVisanet.LinkButton1">
+	<summary>
+LinkButton1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.PrincipalVisanet.CPHPrincipal">
+	<summary>
+CPHPrincipal control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.lCodComercio">
+	<summary>
+lCodComercio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.txtCodComercio">
+	<summary>
+txtCodComercio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.lNumTerminal">
+	<summary>
+lNumTerminal control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.txtNumTerminal">
+	<summary>
+txtNumTerminal control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.lIdTran">
+	<summary>
+lIdTran control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.txtIdTran">
+	<summary>
+txtIdTran control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.txtFechaINI">
+	<summary>
+txtFechaINI control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.imgFechaINI">
+	<summary>
+imgFechaINI control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.txtFechaINI_CE">
+	<summary>
+txtFechaINI_CE control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.txtFechaFin">
+	<summary>
+txtFechaFin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.imgFechaFIN">
+	<summary>
+imgFechaFIN control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.txtFechaFIN_CE">
+	<summary>
+txtFechaFIN_CE control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.cmbEmpresa">
+	<summary>
+cmbEmpresa control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.Label5">
+	<summary>
+Label5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.cmbServicio">
+	<summary>
+cmbServicio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.Label4">
+	<summary>
+Label4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.cmbEstado">
+	<summary>
+cmbEstado control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.lDatosApp1">
+	<summary>
+lDatosApp1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.txtDatosApp1">
+	<summary>
+txtDatosApp1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.lDatosApp2">
+	<summary>
+lDatosApp2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.txtDatosApp2">
+	<summary>
+txtDatosApp2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.lDatosApp3">
+	<summary>
+lDatosApp3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.txtDatosApp3">
+	<summary>
+txtDatosApp3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.lDatosApp4">
+	<summary>
+lDatosApp4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.txtDatosApp4">
+	<summary>
+txtDatosApp4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.lDatosApp5">
+	<summary>
+lDatosApp5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.txtDatosApp5">
+	<summary>
+txtDatosApp5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.lDatosApp6">
+	<summary>
+lDatosApp6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.txtDatosApp6">
+	<summary>
+txtDatosApp6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.lDatosApp7">
+	<summary>
+lDatosApp7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.txtDatosApp7">
+	<summary>
+txtDatosApp7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.lDatosApp8">
+	<summary>
+lDatosApp8 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.txtDatosApp8">
+	<summary>
+txtDatosApp8 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.bConsultar">
+	<summary>
+bConsultar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.bExportar">
+	<summary>
+bExportar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaVisanet.gridTran">
+	<summary>
+gridTran control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.lIdGrupo">
+	<summary>
+lIdGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.Label6">
+	<summary>
+Label6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.cmbEmpresa">
+	<summary>
+cmbEmpresa control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.txtCodGrupo">
+	<summary>
+txtCodGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.Label10">
+	<summary>
+Label10 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.txtNomGrupo">
+	<summary>
+txtNomGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.Label4">
+	<summary>
+Label4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.txtDescGrupo">
+	<summary>
+txtDescGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.Label5">
+	<summary>
+Label5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.txtRUC">
+	<summary>
+txtRUC control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.Label16">
+	<summary>
+Label16 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.rbFlagRUC">
+	<summary>
+rbFlagRUC control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.Label18">
+	<summary>
+Label18 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.txtFechaInsert">
+	<summary>
+txtFechaInsert control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.Label19">
+	<summary>
+Label19 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.txtFechaUltActualiz">
+	<summary>
+txtFechaUltActualiz control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.bActualizar">
+	<summary>
+bActualizar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.bNuevo">
+	<summary>
+bNuevo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmMANTGrupoComercio.bCancelar">
+	<summary>
+bCancelar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYGrupoComercio.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYGrupoComercio.lNombreGrupo">
+	<summary>
+lNombreGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYGrupoComercio.txtGrupo">
+	<summary>
+txtGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYGrupoComercio.lRUC">
+	<summary>
+lRUC control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYGrupoComercio.txtRUC">
+	<summary>
+txtRUC control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYGrupoComercio.bConsultar">
+	<summary>
+bConsultar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYGrupoComercio.bExportar">
+	<summary>
+bExportar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYGrupoComercio.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYGrupoComercio.gridGrupo">
+	<summary>
+gridGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComUsuarioComercio.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComUsuarioComercio.lLoginUsuario">
+	<summary>
+lLoginUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComUsuarioComercio.txtLoginUsuario">
+	<summary>
+txtLoginUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComUsuarioComercio.lNombreUsuario">
+	<summary>
+lNombreUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComUsuarioComercio.txtNomUsuario">
+	<summary>
+txtNomUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComUsuarioComercio.lAPaterno">
+	<summary>
+lAPaterno control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComUsuarioComercio.txtAPaterno">
+	<summary>
+txtAPaterno control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComUsuarioComercio.lEmail">
+	<summary>
+lEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComUsuarioComercio.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComUsuarioComercio.bConsultar">
+	<summary>
+bConsultar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComUsuarioComercio.bExportar">
+	<summary>
+bExportar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComUsuarioComercio.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComUsuarioComercio.gridUsuario">
+	<summary>
+gridUsuario control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.Login.head">
+	<summary>
+head control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.Login.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.Login.Image1">
+	<summary>
+Image1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.Login.ContentPlaceHolder1">
+	<summary>
+ContentPlaceHolder1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.lCodComercio">
+	<summary>
+lCodComercio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.txtCodComercio">
+	<summary>
+txtCodComercio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.lNumTerminal">
+	<summary>
+lNumTerminal control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.txtNumTerminal">
+	<summary>
+txtNumTerminal control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.lIdTran">
+	<summary>
+lIdTran control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.txtIdTran">
+	<summary>
+txtIdTran control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.txtFechaINI">
+	<summary>
+txtFechaINI control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.imgFechaINI">
+	<summary>
+imgFechaINI control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.txtFechaINI_CE">
+	<summary>
+txtFechaINI_CE control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.txtFechaFin">
+	<summary>
+txtFechaFin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.imgFechaFIN">
+	<summary>
+imgFechaFIN control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.txtFechaFIN_CE">
+	<summary>
+txtFechaFIN_CE control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.cmbServicio">
+	<summary>
+cmbServicio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.Label4">
+	<summary>
+Label4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.cmbEstado">
+	<summary>
+cmbEstado control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.lDatosApp1">
+	<summary>
+lDatosApp1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.txtDatosApp1">
+	<summary>
+txtDatosApp1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.lDatosApp2">
+	<summary>
+lDatosApp2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.txtDatosApp2">
+	<summary>
+txtDatosApp2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.lDatosApp3">
+	<summary>
+lDatosApp3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.txtDatosApp3">
+	<summary>
+txtDatosApp3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.lDatosApp4">
+	<summary>
+lDatosApp4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.txtDatosApp4">
+	<summary>
+txtDatosApp4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.lDatosApp5">
+	<summary>
+lDatosApp5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.txtDatosApp5">
+	<summary>
+txtDatosApp5 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.lDatosApp6">
+	<summary>
+lDatosApp6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.txtDatosApp6">
+	<summary>
+txtDatosApp6 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.lDatosApp7">
+	<summary>
+lDatosApp7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.txtDatosApp7">
+	<summary>
+txtDatosApp7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.lDatosApp8">
+	<summary>
+lDatosApp8 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.txtDatosApp8">
+	<summary>
+txtDatosApp8 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.bConsultar">
+	<summary>
+bConsultar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.bExportar">
+	<summary>
+bExportar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmConsultaComercio.gridTran">
+	<summary>
+gridTran control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComercioConsulta.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComercioConsulta.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComercioConsulta.lGrupo">
+	<summary>
+lGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComercioConsulta.cmbGrupo">
+	<summary>
+cmbGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComercioConsulta.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComercioConsulta.gridGrupo">
+	<summary>
+gridGrupo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComercioConsulta.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComercioConsulta.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComercioConsulta.txtListaCodigos">
+	<summary>
+txtListaCodigos control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComercioConsulta.txtLog">
+	<summary>
+txtLog control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComercioConsulta.bAdd">
+	<summary>
+bAdd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmQRYComercioConsulta.bRemove">
+	<summary>
+bRemove control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.panFiltros">
+	<summary>
+panFiltros control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.txtFechaINI">
+	<summary>
+txtFechaINI control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.txtFechaINI_CalendarExtender">
+	<summary>
+txtFechaINI_CalendarExtender control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.imgFechaINI">
+	<summary>
+imgFechaINI control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.txtFechaFin">
+	<summary>
+txtFechaFin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.txtFechaFin_CalendarExtender">
+	<summary>
+txtFechaFin_CalendarExtender control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.imgFechaFIN">
+	<summary>
+imgFechaFIN control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.Label3">
+	<summary>
+Label3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.cmbServicio">
+	<summary>
+cmbServicio control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.Label4">
+	<summary>
+Label4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.cmbEstado">
+	<summary>
+cmbEstado control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.bConsultar">
+	<summary>
+bConsultar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.bExportar">
+	<summary>
+bExportar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.lMensaje">
+	<summary>
+lMensaje control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.frmTotales.gridTran">
+	<summary>
+gridTran control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.Principal.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.Principal.head">
+	<summary>
+head control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.Principal.ScriptManager1">
+	<summary>
+ScriptManager1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.Principal.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.Principal.Image1">
+	<summary>
+Image1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.Principal.lLogin">
+	<summary>
+lLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.Principal.menuPrincipal">
+	<summary>
+menuPrincipal control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.Principal.mnuOpc">
+	<summary>
+mnuOpc control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.Principal.LinkButton1">
+	<summary>
+LinkButton1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:webModuloConsultas.Principal.CPHPrincipal">
+	<summary>
+CPHPrincipal control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+</members>
+</doc>

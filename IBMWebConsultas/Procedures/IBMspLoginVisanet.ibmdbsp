@@ -1,0 +1,80 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spLOGINWebVisanet
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spLOGINWebVisanet (
+IN PUSUARIOLOGIN VARCHAR(20),
+IN PPASSWORD VARCHAR(20),
+OUT PIDUSUARIO INTEGER,
+OUT PNIVEL INTEGER,
+OUT PNOMBRE VARCHAR(50),
+OUT PAPATERNO VARCHAR(50),
+OUT PEMAIL VARCHAR(50),
+OUT CR CHAR(2),
+OUT PMENSAJE VARCHAR(100) )
+	SPECIFIC "SQMNUC".spLOGINWebVisanet
+	LANGUAGE SQL
+
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+
+P1: BEGIN
+-- Declare cursors
+DECLARE SQLCODE INTEGER DEFAULT 0;
+declare iIdUsuario INTEGER;
+declare iNivel INTEGER;
+declare sPassword varchar(20);
+declare sNomComercio varchar(50);
+declare sNombre varchar(50);
+declare sApellidoP varchar(50);
+declare sEmail varchar(50);
+
+DECLARE curUsuario CURSOR FOR
+SELECT	UA.IDUSUARIO, UA.PASSWORD, UA.NOMBRE, UA.APELLIDOP, UA.EMAIL, UA.NIVEL, UA.APELLIDOP, UA.EMAIL
+FROM SQMNUC.USUARIO_ADMIN UA
+WHERE
+UA.LOGIN = PUSUARIOLOGIN;
+
+OPEN curUsuario;
+fetch curUsuario 
+into iIdUsuario, sPassword, sNombre, sApellidoP, sEmail, iNivel, sApellidoP, sEmail;
+
+IF (SQLCODE = 0) THEN
+
+	IF (sPassword = PPASSWORD) THEN
+		SET PMENSAJE = 'LOGIN OK';
+		SET PIDUSUARIO = iIdUsuario;
+		SET PNIVEL = iNivel;
+		SET PNOMBRE = sNombre;
+		SET PAPATERNO = sApellidoP;
+		SET PEMAIL = sEmail;
+		--SET PNOMCOMERCIO = sNomComercio;
+		SET CR='00';
+	ELSE
+		--SET PMENSAJE = 'PASSWORD NO COINCIDE';
+		SET PMENSAJE = 'VERIFIQUE SU NOMBRE DE USUARIO Y CONTRASEÑA';
+		SET CR='02';
+	END IF;
+
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PMENSAJE = 'VERIFIQUE SU NOMBRE DE USUARIO Y CONTRASEÑA';
+	SET CR='01';
+END IF;
+close curUsuario;
+
+END P1
+@
+COMMENT ON  SPECIFIC PROCEDURE "SQMNUC".spLOGINWebVisanet IS 'Login para el modulo de consultas web de usuarios Visanet'
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spLOGINWebVisanet TO PUBLIC
+@

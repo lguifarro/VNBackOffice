@@ -1,0 +1,65 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spQRYDetalleTarifaEmpresa
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spQRYDetalleTarifaEmpresa ( 
+IN PCMCIOID INTEGER,
+OUT PTIPOCALCULO VARCHAR(1),
+OUT PMONEDA VARCHAR(1),
+OUT PFECHAINSERT TIMESTAMP,
+OUT PFECHAULTACTUALIZ TIMESTAMP,
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100)  )
+	SPECIFIC SQMNUC.spQRYDetalleTarifaEmpresa
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+P1: BEGIN
+-- Declare cursors
+DECLARE SQLCODE INTEGER DEFAULT 0;
+declare sTipoCalculo varchar(1);
+declare sMoneda varchar(1);
+declare dFechaInsert TIMESTAMP;
+declare dFechaUltActualiz TIMESTAMP;
+
+DECLARE CURUSUARIO CURSOR FOR 
+	SELECT TIPO_CALCULO, MONEDA, FECHAINSERT, FECHAULTACTUALIZ 
+	FROM SQMNUC.PLAN_TARIFARIO
+	WHERE CMCIO_ID = PCMCIOID;
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+	FETCH CURUSUARIO INTO
+	sTipoCalculo, sMoneda, dFechaInsert, dFechaUltActualiz; 
+
+IF (SQLCODE = 0) THEN
+
+	SET PTIPOCALCULO = sTipoCalculo;
+	SET PMONEDA = sMoneda;
+	SET PFECHAINSERT = dFechaInsert;
+	SET PFECHAULTACTUALIZ = dFechaInsert;
+	--SET PNOMCOMERCIO = sNomComercio;
+	SET PCR='00';
+	SET PDESCERROR = 'CONSULTA OK';
+
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'USUARIO NO ENCONTRADO';
+	SET PCR='01';
+END IF;
+close CURUSUARIO;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spQRYDetalleTarifaEmpresa TO PUBLIC
+@

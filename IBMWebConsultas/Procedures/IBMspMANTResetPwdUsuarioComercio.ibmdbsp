@@ -1,0 +1,46 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTResetPwdUsuarioComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTResetPwdUsuarioComercio ( 
+IN PIDUSUARIOCONSULTA INTEGER,
+IN PPASSWORD VARCHAR(20),
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTResetPwdUsuarioComercio 
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+P1: BEGIN
+
+IF EXISTS (SELECT IDUSUARIO FROM SQMNUC.USUARIO_COMERCIO_CONS WHERE IDUSUARIO = PIDUSUARIOCONSULTA) THEN
+
+	UPDATE SQMNUC.USUARIO_COMERCIO_CONS
+	SET
+		PASSWORD = PPASSWORD, 
+		FECHAULTACTUALIZ = CURRENT TIMESTAMP
+	WHERE IDUSUARIO = PIDUSUARIOCONSULTA;
+
+	SET PDESCERROR = 'ACTUALIZACION OK';
+	SET PCR='00';
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'USUARIO NO ENCONTRADO';
+	SET PCR='01';
+END IF;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTResetPwdUsuarioComercio TO PUBLIC
+@

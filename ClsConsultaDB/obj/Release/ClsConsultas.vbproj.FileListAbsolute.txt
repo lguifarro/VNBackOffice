@@ -1,0 +1,10 @@
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\bin\Release\ClsConsultas.dll
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\bin\Release\ClsConsultas.pdb
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\bin\Release\ClsConsultas.xml
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\obj\Release\ResolveAssemblyReference.cache
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\obj\Release\ClsConsultas.Resources.resources
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\obj\Release\GenerateResource.read.1.tlog
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\obj\Release\GenerateResource.write.1.tlog
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\obj\Release\ClsConsultas.dll
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\obj\Release\ClsConsultas.xml
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\obj\Release\ClsConsultas.pdb

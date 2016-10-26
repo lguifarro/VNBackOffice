@@ -1,0 +1,39 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTtInsertRangoTarifa 
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTtInsertRangoTarifa ( 
+IN PCMCIOID INTEGER,
+IN PDESDE BIGINT,
+IN PHASTA BIGINT,
+IN PTARIFA DOUBLE,
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTtInsertRangoTarifa 
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+P1: BEGIN
+
+	INSERT INTO SQMNUC.TARIFA_TRX(CMCIO_ID, TRX_DESDE, TRX_HASTA, TARIFA, FECHAINSERT, FECHAULTACTUALIZ)
+	VALUES
+	(PCMCIOID, PDESDE, PHASTA, PTARIFA, CURRENT TIMESTAMP, CURRENT TIMESTAMP);
+	
+	SET PDESCERROR = 'REGISTRO OK';
+	SET PCR='00';
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTtInsertRangoTarifa TO PUBLIC
+@

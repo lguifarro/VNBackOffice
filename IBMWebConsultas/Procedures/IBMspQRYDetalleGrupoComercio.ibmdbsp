@@ -1,0 +1,85 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spQRYDetalleGrupoComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spQRYDetalleGrupoComercio ( 
+IN PIDGRUPOCONSULTA INTEGER,
+OUT PCMCIOID INTEGER,
+OUT PCODGRUPO VARCHAR(11),
+OUT PNOMGRUPO VARCHAR(50),
+OUT PCMCIONOMBRE VARCHAR(50),
+OUT PDESCGRUPO VARCHAR(100),
+OUT PFLAGRUC INTEGER,
+OUT PRUC DECIMAL(15),
+OUT PFECHAINSERT TIMESTAMP,
+OUT PFECHAULTACTUALIZ TIMESTAMP,
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100)  )
+	SPECIFIC SQMNUC.spQRYDetalleGrupoComercio
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+P1: BEGIN
+-- Declare cursors
+DECLARE SQLCODE INTEGER DEFAULT 0;
+declare iIdGrupo INTEGER;
+declare sCodGrupo VARCHAR(11);
+declare sNomGrupo VARCHAR(50);
+declare sDescGrupo VARCHAR(100);
+declare iFlagRUC INT;
+declare iCmcioId INT;
+declare sCmcioNombre VARCHAR(50);
+declare iRUC DECIMAL(15);
+declare dFechaInsert TIMESTAMP;
+declare dFechaUltActualiz TIMESTAMP;
+
+DECLARE CURUSUARIO CURSOR FOR 
+	SELECT GC.IDGRUPO, GC.CMCIO_ID, GC.COD_GRUPO, GC.NOMBRE_GRUPO, GC.FLAG_RUC, GC.RUC, GC.DESC_GRUPO, C.CMCIO_NOMBRE, GC.FECHAINSERT, GC.FECHAULTACTUALIZ 
+	FROM SQMNUC.GRUPO_COMERCIO GC, SQMNUC.COMERCIO C
+	WHERE GC.IDGRUPO = PIDGRUPOCONSULTA AND GC.CMCIO_ID = C.CMCIO_ID;
+
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+	FETCH CURUSUARIO INTO
+	iIdGrupo, iCmcioId, sCodGrupo, sNomGrupo, iFlagRUC, iRUC, sDescGrupo, sCmcioNombre, dFechaInsert, dFechaUltActualiz; 
+
+IF (SQLCODE = 0) THEN
+
+--INSERT INTO SQMNUC.ANALISIS (FECHAINSERT, DATA) VALUES  (CURRENT TIMESTAMP, ' ENCONTRO RESULTADOS =' || RTRIM(CAST( AS VARCHAR(2))));
+
+	SET PCODGRUPO = sCodGrupo;
+	SET PNOMGRUPO = sNomGrupo;
+	SET PDESCGRUPO = sDescGrupo;
+	SET PFLAGRUC = iFlagRUC;
+	SET PRUC = iRUC;
+	SET PCMCIOID = iCmcioId;
+	SET PCMCIONOMBRE = sCmcioNombre;
+
+	SET PFECHAINSERT = dFechaInsert;
+	SET PFECHAULTACTUALIZ = dFechaInsert;
+	--SET PNOMCOMERCIO = sNomComercio;
+	SET PCR='00';
+	SET PDESCERROR = 'CONSULTA OK';
+
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'GRUPO NO ENCONTRADO';
+	SET PCR='01';
+END IF;
+close CURUSUARIO;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spQRYDetalleGrupoComercio TO PUBLIC
+@

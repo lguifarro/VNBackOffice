@@ -1,0 +1,79 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spLOGINWeb
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spLOGINWeb (
+IN PCODCOMERCIO VARCHAR(15),
+IN PUSUARIOLOGIN VARCHAR(20),
+IN PPASSWORD VARCHAR(20),
+OUT PIDUSUARIO VARCHAR(20),
+OUT PIDCOMERCIO INTEGER,
+OUT PNOMCOMERCIO VARCHAR(50),
+OUT CR CHAR(2),
+OUT PMENSAJE VARCHAR(100) )
+	SPECIFIC "SQMNUC".spLOGINWeb
+	LANGUAGE SQL
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+P1: BEGIN
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+DECLARE SQLCODE INTEGER DEFAULT 0;
+declare sCodUsuario varchar(20);
+declare sPassword varchar(20);
+declare iIdComercio INTEGER;
+declare sNomComercio varchar(50);
+
+DECLARE curUsuario CURSOR FOR
+SELECT	UC.USUARIO_CODIGO,  UC.CMCIO_ID, U.USUARIO_PASSWORD, CO.CMCIO_NOMBRE
+FROM SQMNUC.USUARIO_COMERCIO UC, SQMNUC.USUARIO U, SQMNUC.COMERCIO CO
+WHERE
+UC.CMCIO_CODIGO = PCODCOMERCIO
+AND UC.USUARIO_CODIGO = U.USUARIO_CODIGO
+AND U.USUARIO_ID = PUSUARIOLOGIN
+AND CO.CMCIO_ID = UC.CMCIO_ID
+AND UC.CMCIO_CODIGO = CO.CMCIO_CODIGO;
+--AND U.USUARIO_PASSWORD = PPASSWORD;
+
+OPEN curUsuario;
+fetch curUsuario 
+into sCodUsuario, iIdComercio, sPassword, sNomComercio;
+
+IF (SQLCODE = 0) THEN
+
+	IF (sPassword = PPASSWORD) THEN
+		SET PMENSAJE = 'LOGIN OK';
+		SET PIDUSUARIO = sCodUsuario;
+		SET PIDCOMERCIO = iIdComercio;
+		SET PNOMCOMERCIO = sNomComercio;
+		SET CR='00';
+	ELSE
+		--SET PMENSAJE = 'PASSWORD NO COINCIDE';
+		SET PMENSAJE = 'VERIFIQUE SU NOMBRE DE USUARIO Y CONTRASEÑA';
+		SET CR='02';
+	END IF;
+
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PMENSAJE = 'VERIFIQUE SU NOMBRE DE USUARIO Y CONTRASEÑA';
+	SET CR='01';
+END IF;
+close curUsuario;
+
+END P1
+
+@
+COMMENT ON  SPECIFIC PROCEDURE "SQMNUC".spLOGINWeb IS 'Login para el modulo de consultas web'
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spLOGINWeb TO PUBLIC
+@

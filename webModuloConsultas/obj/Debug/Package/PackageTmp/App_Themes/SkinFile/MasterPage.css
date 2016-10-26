@@ -1,0 +1,99 @@
+﻿/* Estilos para el Master Page */
+.popupControl {
+	background-color:#AAD4FF;
+	position:absolute;
+	visibility:hidden;
+	border-style:solid;
+	border-color: Black;
+	border-width: 2px;
+}
+
+.modalBackground {
+	background-color:Gray;
+	filter:alpha(opacity=80);
+	opacity:0.8;
+}
+.modalConfirmar {border-color:OliveDrab;}
+.modalInformar1 {border-color:Blue;}
+.modalInformar2 {border-color:Yellow;}
+.modalInformar3 {border-color:Red;}
+
+.modalConfirmar_Titulo {background-color:#9ab737;}
+.modalInformar1_Titulo {background-color:Aqua; color:White; font-family:Calibri; font-size:11pt; color:White;}
+.modalInformar2_Titulo {background-color:Lime; color:White; font-family:Calibri; font-size:11pt; color:White;}
+.modalInformar3_Titulo {background-color:Teal; color:White; font-family:Calibri; font-size:11pt; color:White;}
+
+/* Master Page Layout */
+#master_header
+{
+	/*width: 3000px;*/
+	margin: -1px auto 0 auto;
+	border-left:solid 1px #767676;
+	border-right:solid 1px #767676;	
+}
+#master_page
+{
+	margin: -1px auto 0 auto;
+	/*width: 3000px;*/
+	border-left:solid 1px #767676;
+	border-right:solid 1px #767676;
+	border-bottom:solid 1px #767676;
+	background-color:White;
+}
+
+#master_menu
+{
+	float: left;
+	width: 1px;
+	padding-right: 5px;
+}
+
+#master_content
+{
+	/*width: 3000px;*/
+	color: #666666;
+}
+
+#master_content ul
+{
+	margin: 0 0px 0 0px;
+}
+
+#master_content ul li ul li
+{
+	list-style-type: disc;
+}
+
+
+#master_barheader
+{
+	background: url(Imagenes/bk_info.jpg);
+}
+
+
+#master_contentplaceholder
+{
+	background-color:White;
+}
+
+#master_contentbody
+{
+	 margin-left:-6px;
+	 margin-right:-1px;
+	 margin-top:-7px;
+	 margin-bottom: -5px; 
+}
+
+#master_contentfooter
+{
+	background: #cfcfcf;
+	color: #676767;
+	font-size: 10px;
+}
+
+.tdbk_menu
+{
+	background-image: url(Imagenes/bk_menu.jpg);
+	background-color:#5e5e5e;
+	height: 29px;
+}

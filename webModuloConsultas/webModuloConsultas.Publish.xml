@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="D:\Web\modConsultas" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="localhost/modConsultas/" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="perfilPublico" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/webModuloConsultas.pdb" publishTime="10/23/2015 13:04:05" />
+    <file relUrl="frmMANTUsuarioVisanet.aspx" publishTime="04/26/2015 15:48:47" />
+    <file relUrl="frmQRYGrupoComercio.aspx" publishTime="04/28/2015 12:09:16" />
+    <file relUrl="App_Themes/SkinFile/SkinFile.skin" publishTime="01/31/2012 11:29:06" />
+    <file relUrl="Imagenes/imgEdit.png" publishTime="01/09/2012 11:01:04" />
+    <file relUrl="frmTotales.aspx" publishTime="02/07/2012 10:58:02" />
+    <file relUrl="Imagenes/NVO.visa-logo.jpg" publishTime="01/31/2012 16:49:20" />
+    <file relUrl="frmMANTComUsuarioComercio.aspx" publishTime="09/27/2015 21:56:32" />
+    <file relUrl="frmQRYEmpUsuarioComercio.aspx" publishTime="10/04/2015 19:20:35" />
+    <file relUrl="frmQRYTarifaEmpresa.aspx" publishTime="10/10/2015 00:13:06" />
+    <file relUrl="PrincipalVisanet.Master" publishTime="10/09/2015 23:54:52" />
+    <file relUrl="Imagenes/arrow_right.png" publishTime="03/12/2006 21:48:50" />
+    <file relUrl="Imagenes/imgCalendario.png" publishTime="11/04/2011 21:17:04" />
+    <file relUrl="Imagenes/imgNuevo.png" publishTime="03/12/2006 21:55:24" />
+    <file relUrl="frmLoginVisanet.aspx" publishTime="04/29/2015 18:03:45" />
+    <file relUrl="bin/AjaxControlToolkit.dll" publishTime="09/30/2009 16:57:54" />
+    <file relUrl="bin/IBM.Data.DB2.dll" publishTime="12/06/2013 10:46:24" />
+    <file relUrl="frmMANTTarifaEmpresa.aspx" publishTime="10/09/2015 20:43:16" />
+    <file relUrl="frmMANTUsuarioComercio.aspx" publishTime="10/05/2015 18:35:01" />
+    <file relUrl="frmQRYServicioConsulta.aspx" publishTime="04/28/2015 17:05:06" />
+    <file relUrl="frmConsultaVisanet.aspx" publishTime="04/27/2015 15:01:29" />
+    <file relUrl="bin/webModuloConsultas.xml" publishTime="10/23/2015 13:04:05" />
+    <file relUrl="frmQRYUsuarioComercio.aspx" publishTime="04/28/2015 09:45:14" />
+    <file relUrl="frmConsultaComercio.aspx" publishTime="04/28/2015 16:38:48" />
+    <file relUrl="frmQRYServicioEmpresa.aspx" publishTime="10/05/2015 21:32:39" />
+    <file relUrl="App_Themes/SkinFile/MasterPage.css" publishTime="12/30/2011 11:39:50" />
+    <file relUrl="frmQRYEmpServicioConsulta.aspx" publishTime="10/04/2015 19:20:35" />
+    <file relUrl="bin/ClsConsultas.dll" publishTime="10/23/2015 13:03:56" />
+    <file relUrl="frmConsulta.aspx" publishTime="01/31/2012 19:07:12" />
+    <file relUrl="App_Themes/SkinFile/Login.css" publishTime="01/03/2012 11:52:16" />
+    <file relUrl="Principal.Master" publishTime="10/04/2015 19:20:35" />
+    <file relUrl="bin/ClsConsultas.xml" publishTime="10/23/2015 13:03:56" />
+    <file relUrl="bin/ClsConsultas.pdb" publishTime="10/23/2015 13:03:56" />
+    <file relUrl="frmQRYEmpGrupoComercio.aspx" publishTime="10/04/2015 20:01:09" />
+    <file relUrl="frmLogin.aspx" publishTime="02/01/2012 14:04:20" />
+    <file relUrl="frmQRYEmpComercioConsulta.aspx" publishTime="10/04/2015 22:20:08" />
+    <file relUrl="frmMantEmpGrupoComercio.aspx" publishTime="10/04/2015 20:01:09" />
+    <file relUrl="Imagenes/page-last-icon.png" publishTime="01/31/2012 19:03:46" />
+    <file relUrl="bin/webModuloConsultas.dll" publishTime="10/23/2015 13:04:05" />
+    <file relUrl="PrincipalComercio.Master" publishTime="04/29/2015 18:06:18" />
+    <file relUrl="frmQRYComercioConsulta.aspx" publishTime="04/29/2015 16:01:20" />
+    <file relUrl="Imagenes/page-first-icon.png" publishTime="01/31/2012 19:09:06" />
+    <file relUrl="frmMantEmpUsuarioComercio.aspx" publishTime="10/05/2015 21:06:14" />
+    <file relUrl="frmLoginComercio.aspx" publishTime="10/23/2015 12:45:07" />
+    <file relUrl="Web.config" publishTime="10/23/2015 13:04:13" />
+    <file relUrl="Imagenes/arrow_left.png" publishTime="03/12/2006 21:48:46" />
+    <file relUrl="Login.Master" publishTime="02/16/2012 17:12:06" />
+    <file relUrl="frmMANTGrupoComercio.aspx" publishTime="10/04/2015 19:42:55" />
+    <file relUrl="frmQRYUsuarioVisanet.aspx" publishTime="10/09/2015 18:55:05" />
+    <file relUrl="frmTotalEmpresaFecha.aspx" publishTime="02/07/2012 10:58:02" />
+    <file relUrl="App_Themes/SkinFile/StyleSheet.css" publishTime="01/03/2012 13:18:10" />
+    <file relUrl="frmQRYComUsuarioComercio.aspx" publishTime="09/27/2015 21:22:16" />
+  </publishProfile>
+</publishData>

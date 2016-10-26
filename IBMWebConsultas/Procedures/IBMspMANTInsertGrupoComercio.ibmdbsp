@@ -1,0 +1,52 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTInsertGrupoComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTInsertGrupoComercio ( 
+OUT PIDGRUPO INTEGER,
+IN PCMCIOID INT,
+IN PCODGRUPO VARCHAR(11),
+IN PNOMGRUPO VARCHAR(50),
+IN PDESCGRUPO VARCHAR(100),
+IN PFLAGRUC INTEGER,
+IN PRUC DECIMAL(15),
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTInsertGrupoComercio 
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+P1: BEGIN
+
+IF EXISTS (SELECT COD_GRUPO FROM SQMNUC.GRUPO_COMERCIO WHERE COD_GRUPO = PCODGRUPO AND CMCIO_ID = PCMCIOID) THEN
+
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'GRUPO YA EXISTE';
+	SET PCR='01';
+
+ELSE
+	INSERT INTO SQMNUC.GRUPO_COMERCIO (COD_GRUPO, CMCIO_ID, NOMBRE_GRUPO, DESC_GRUPO, FLAG_RUC, RUC, FECHAINSERT, FECHAULTACTUALIZ)
+	VALUES
+	(PCODGRUPO, PCMCIOID, PNOMGRUPO, PDESCGRUPO, PFLAGRUC, PRUC, CURRENT TIMESTAMP, CURRENT TIMESTAMP);
+	
+	SET PIDGRUPO = IDENTITY_VAL_LOCAL();
+
+SET PDESCERROR = 'REGISTRO OK';
+	SET PCR='00';
+END IF;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTInsertGrupoComercio TO PUBLIC
+@

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config version="0.1">
+	<hosts>
+		<host id="9171" ip="172.17.4.132" name="Servicios Visanet" idFormat="NUC" state="1"/>
+		<host id="5001" ip="172.17.4.132" name="Servicios DB2" idFormat="DB2" state="0"/>
+	</hosts>
+
+	<columnas>
+		<columna id="3" titulo="Codigo" datafield="LOGPO_CMCIOPOS_CODIGO" alineado="center" ancho="70" format="">
+		</columna>
+		<columna id="7" titulo="Comercio" datafield="LOGPO_CMCIOPOS_NOMBRE" alineado="izq" ancho="200" format="">
+		</columna>
+		<columna id="4" titulo="Terminal" datafield="LOGPO_NRO_POS" alineado="center" ancho="60" format="">
+		</columna>
+		<columna id="6" titulo="Id Txn" datafield="LOGPO_ID_TRANSACCION" alineado="center" ancho="40" format="">
+		</columna>
+		<columna id="10" titulo="Fecha/Hora" datafield="LOGPO_FECHAYHORA" alineado="der" ancho="180" format="">
+		</columna>
+
+		<columna id="1" titulo="IdSesion" datafield="LOGPO_IDSESION" alineado="center" ancho="30" format="">
+		</columna>
+
+		<columna id="9" titulo="Importe" datafield="LOGPO_IMPORTE_PEDIDO" alineado="der" ancho="50" format="{0:N2}">
+		</columna>
+
+		<columna id="13" titulo="Descripcion Estado" datafield="DESCRIPCION" alineado="izq" ancho="180" format="">
+		</columna>
+		
+		<columna id="5" titulo="Servicio" datafield="SERVI_NOMBRE" alineado="izq" ancho="120" format="">
+		</columna>
+
+		<columna id="12" titulo="Cupon" datafield="LOGPO_DATOSAPP1" alineado="center" ancho="50" format="">
+		</columna>
+		<columna id="14" titulo="DNI" datafield="LOGPO_DATOSAPP2" alineado="center" ancho="50" format="">
+		</columna>
+		<columna id="15" titulo="Motivo" datafield="LOGPO_CODRETO_DESC" alineado="izq" ancho="220" format="">
+		</columna>
+
+	</columnas>
+	<services>
+		<service id="999" name="TODOS" />
+		<service id="281" name="Canje de cupones" />
+	</services>
+	<queries>
+		<query id="select" string="SELECT LP.LOGPO_IDSESION, LP.LOGPO_SERVI_CODIGO, LP.LOGPO_CMCIOPOS_CODIGO, LP.LOGPO_NRO_POS, S.SERVI_NOMBRE, LP.LOGPO_ID_TRANSACCION, LP.LOGPO_CMCIOPOS_NOMBRE, LP.LOGPO_COD_AUTORIZACION, (DOUBLE(LP.LOGPO_IMPORTE_PEDIDO)/100) AS LOGPO_IMPORTE_PEDIDO, RTRIM(LP.LOGPO_DATOSAPP1) AS LOGPO_DATOSAPP1, RTRIM(LP.LOGPO_DATOSAPP2) AS LOGPO_DATOSAPP2, COALESCE(E.EST_DESCRIPCION_CONS, LP.LOGPO_ESTADO_PEDIDO) AS DESCRIPCION, LOGPO_DATOS_PRODUCTO, LP.LOGPO_FECHAYHORA, LP.LOGPO_CODRETO_DESC" />
+		<query id="from" string=" FROM SQMNUC.LOG_POS_SERV LP LEFT OUTER JOIN SQMNUC.SERVICIO S ON LP.LOGPO_SERVI_CODIGO = S.SERVI_CODIGO LEFT OUTER JOIN SQMNUC.ESTADO_PEDIDO E ON E.EST_SERVICIO = LP.LOGPO_SERVI_CODIGO AND E.EST_CODIGO = LP.LOGPO_ESTADO_PEDIDO " />
+		<query id="where" string="" />
+		<query id="order" string=" ORDER BY LP.LOGPO_FECHAYHORA " />
+
+	</queries>
+	
+	<filtros>
+		<filtro id="codcomercio" controlid="txtCodComercio" field="LP.LOGPO_CMCIOPOS_CODIGO" operador="like" prefijo="'%" sufijo="%'" formato="" formatstring="">
+		</filtro>
+		<filtro id="numterminal" controlid="txtNumTerminal" field="LP.LOGPO_NRO_POS" operador="like" prefijo="'%" sufijo="%'" formato="" formatstring="">
+		</filtro>
+		<filtro id="idtransaccion" controlid="txtIdTran" field="LP.LOGPO_ID_TRANSACCION" operador="like" prefijo="'%" sufijo="%'" formato="" formatstring="">
+		</filtro>
+		<filtro id="fechaini" controlid="txtFechaINI" field="LP.LOGPO_FECHAYHORA" operador=">=" prefijo="TIMESTAMP_ISO('" sufijo="')" formato="DT" formatstring="yyyy-MM-dd">
+		</filtro>
+		<filtro id="fechafin" controlid="txtFechaFIN" field="LP.LOGPO_FECHAYHORA" operador="&lt;" prefijo="TIMESTAMP_ISO('" sufijo="') + 1 DAY" formato="DT" formatstring="yyyy-MM-dd">
+		</filtro>
+		<filtro id="servicio" controlid="cmbServicio" field="LP.LOGPO_SERVI_CODIGO" operador="=" prefijo="" sufijo="" formato="" formatstring="">
+		</filtro>
+		<filtro id="estado" controlid="cmbEstado" field="LP.LOGPO_ESTADO_PEDIDO" operador="=" prefijo="'" sufijo="'" formato="" formatstring="">
+		</filtro>
+
+		<filtro id="numaut" controlid="txtDatosApp1" field="LP.LOGPO_DATOSAPP1" operador="=" prefijo="'" sufijo="'" formato="AN" formatstring="">
+		</filtro>
+		<filtro id="dni" controlid="txtDatosApp2" field="LP.LOGPO_DATOSAPP2" operador="=" prefijo="'" sufijo="'" formato="AN" formatstring="">
+		</filtro>
+
+	</filtros>
+	
+	<filtrosespeciales>
+		<filtroesp id="lcupon" controlid="lDatosApp1" text="Cupon" maxlen="0" format="AN" ancho="0">
+		</filtroesp>
+		<filtroesp id="txtcupon" controlid="txtDatosApp1" text="" maxlen="15" format="AN" ancho="90">
+		</filtroesp>
+
+		<filtroesp id="lDNI" controlid="lDatosApp2" text="DNI" maxlen="0" format="AN" ancho="0">
+		</filtroesp>
+		<filtroesp id="txtDNI" controlid="txtDatosApp2" text="" maxlen="8" format="AN" ancho="60">
+		</filtroesp>
+	</filtrosespeciales>
+
+	<estados>
+		<estado id="todos" codrespuesta="999" descripcion="TODOS">
+		</estado>
+		<estado id="aprobado" codrespuesta="00" descripcion="APROBADO">
+		</estado>
+		<estado id="denegado" codrespuesta="50" descripcion="DENEGADO POR GROUPON">
+		</estado>
+		<estado id="timeout" codrespuesta="62" descripcion="TIMEOUT">
+		</estado>
+		<estado id="timeout" codrespuesta="49" descripcion="ERROR DE FORMATO">
+		</estado>
+		<estado id="timeout" codrespuesta="43" descripcion="TRX NO ENCONTRADA">
+		</estado>
+	</estados>
+	
+	<libraries>
+		<library id="0" name="dllNucleo" className="clsNucleo" methodName="NucleoIn"/>
+		<library id="101" name="dllPosContometro" className="clsTrama" methodName="TramaIn"/>
+		<library id="102" name="dllVisanetInsumos" className="ComClassUno" methodName="paso1"/>
+	</libraries>
+</config>

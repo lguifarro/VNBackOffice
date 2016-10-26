@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config version="0.1">
+	<columnas>
+		<columna id="60" titulo="Id Empresa" datafield="LOGPO_CMCIO_ID" alineado="center" ancho="70" format="">
+		</columna>
+		<columna id="62" titulo="Empresa" datafield="CMCIO_NOMBRE" alineado="izq" ancho="200" format="">
+		</columna>
+		<columna id="2" titulo="Codigo" datafield="LOGPO_CMCIOPOS_CODIGO" alineado="center" ancho="70" format="">
+		</columna>
+		<columna id="4" titulo="Comercio" datafield="LOGPO_CMCIOPOS_NOMBRE" alineado="izq" ancho="200" format="">
+		</columna>
+		<columna id="6" titulo="Terminal" datafield="LOGPO_NRO_POS" alineado="center" ancho="60" format="">
+		</columna>
+		<columna id="8" titulo="IdSesion" datafield="LOGPO_IDSESION" alineado="center" ancho="30" format="">
+		</columna>
+		<columna id="9" titulo="Id Servicio" datafield="LOGPO_SERVI_CODIGO" alineado="izq" ancho="60" format="">
+		</columna>
+		<columna id="10" titulo="Servicio" datafield="SERVI_NOMBRE" alineado="izq" ancho="220" format="">
+		</columna>
+		<columna id="12" titulo="Autoriz." datafield="LOGPO_COD_AUTORIZACION" alineado="center" ancho="30" format="">
+		</columna>
+		<columna id="14" titulo="Importe" datafield="LOGPO_IMPORTE_PEDIDO" alineado="der" ancho="50" format="{0:N2}">
+		</columna>
+		<columna id="16" titulo="Fecha/Hora" datafield="LOGPO_FECHAYHORA" alineado="der" ancho="180" format="">
+		</columna>
+		<columna id="18" titulo="Tarjeta" datafield="LOGPO_NRO_TARJETA" alineado="izq" ancho="110" format="">
+		</columna>
+		<columna id="20" titulo="Descripcion Estado" datafield="DESCRIPCION" alineado="izq" ancho="180" format="">
+		</columna>
+		<columna id="22" titulo="Id Txn" datafield="LOGPO_ID_TRANSACCION" alineado="center" ancho="40" format="">
+		</columna>
+		
+		<columna id="40" titulo="Datos 1" datafield="LOGPO_DATOSAPP1" alineado="der" ancho="90" format="">
+		</columna>
+		<columna id="42" titulo="Datos 2" datafield="LOGPO_DATOSAPP2" alineado="der" ancho="90" format="">
+		</columna>
+		<columna id="44" titulo="Datos 3" datafield="LOGPO_DATOSAPP3" alineado="der" ancho="90" format="">
+		</columna>
+		<columna id="46" titulo="Datos 4" datafield="LOGPO_DATOSAPP4" alineado="der" ancho="90" format="">
+		</columna>
+		<columna id="48" titulo="Datos 5" datafield="LOGPO_DATOSAPP5" alineado="der" ancho="90" format="">
+		</columna>
+
+		<columna id="50" titulo="Datos 6" datafield="LOGPO_DATOSAPP6" alineado="der" ancho="90" format="">
+		</columna>
+		<columna id="52" titulo="Datos 7" datafield="LOGPO_DATOSAPP7" alineado="der" ancho="90" format="">
+		</columna>
+		<columna id="54" titulo="Datos 8" datafield="LOGPO_DATOSAPP8" alineado="der" ancho="90" format="">
+		</columna>
+		<columna id="56" titulo="Datos 9" datafield="LOGPO_DATOSAPP9" alineado="der" ancho="90" format="">
+		</columna>
+		<columna id="58" titulo="Datos 10" datafield="LOGPO_DATOSAPP10" alineado="der" ancho="90" format="">
+		</columna>
+
+
+	</columnas>
+	<services>
+		<service id="999" name="TODOS" />
+		<service id="108" name="Consulta de puntos" />
+		<service id="109" name="Canje de puntos" />
+		<service id="110" name="Anulacion de canje" />
+	</services>
+	<queries>
+		<query id="select" string="SELECT LP.LOGPO_CMCIO_ID, C.CMCIO_NOMBRE, LP.LOGPO_IDSESION, LP.LOGPO_SERVI_CODIGO, LP.LOGPO_CMCIOPOS_CODIGO, LP.LOGPO_NRO_POS, S.SERVI_NOMBRE, LP.LOGPO_ID_TRANSACCION, LP.LOGPO_CMCIOPOS_NOMBRE, LP.LOGPO_COD_AUTORIZACION, (DOUBLE(LP.LOGPO_IMPORTE_PEDIDO)/100) AS LOGPO_IMPORTE_PEDIDO, left(LP.LOGPO_NRO_TARJETA, 6) CONCAT '******' CONCAT RIGHT(RTRIM(LP.LOGPO_NRO_TARJETA),4) AS LOGPO_NRO_TARJETA, RTRIM(COALESCE(LP.LOGPO_DATOSAPP1,'')) AS LOGPO_DATOSAPP1, RTRIM(COALESCE(LP.LOGPO_DATOSAPP2,'')) AS LOGPO_DATOSAPP2, RTRIM(COALESCE(LP.LOGPO_DATOSAPP3,'')) AS LOGPO_DATOSAPP3, RTRIM(COALESCE(LP.LOGPO_DATOSAPP4,'')) AS LOGPO_DATOSAPP4, RTRIM(COALESCE(LP.LOGPO_DATOSAPP5,'')) AS LOGPO_DATOSAPP5, RTRIM(COALESCE(LP.LOGPO_DATOSAPP6,'')) AS LOGPO_DATOSAPP6, RTRIM(COALESCE(LP.LOGPO_DATOSAPP7,'')) AS LOGPO_DATOSAPP7, RTRIM(COALESCE(LP.LOGPO_DATOSAPP8,'')) AS LOGPO_DATOSAPP8, RTRIM(COALESCE(LP.LOGPO_DATOSAPP9,'')) AS LOGPO_DATOSAPP9, RTRIM(COALESCE(LP.LOGPO_DATOSAPP10,'')) AS LOGPO_DATOSAPP10, COALESCE(E.EST_DESCRIPCION_CONS, LP.LOGPO_ESTADO_PEDIDO) AS DESCRIPCION, LOGPO_DATOS_PRODUCTO, LP.LOGPO_FECHAYHORA" />
+		<query id="from" string=" FROM SQMNUC.LOG_POS_SERV LP LEFT OUTER JOIN SQMNUC.SERVICIO S ON LP.LOGPO_SERVI_CODIGO = S.SERVI_CODIGO LEFT OUTER JOIN SQMNUC.COMERCIO C ON LP.LOGPO_CMCIO_ID = C.CMCIO_ID LEFT OUTER JOIN SQMNUC.ESTADO_PEDIDO E ON E.EST_SERVICIO = LP.LOGPO_SERVI_CODIGO AND E.EST_CODIGO = LP.LOGPO_ESTADO_PEDIDO" />
+		<query id="where" string="" />
+		<query id="order" string=" ORDER BY LP.LOGPO_FECHAYHORA " />
+
+	</queries>
+	
+	<filtros>
+		<filtro id="codcomercio" controlid="txtCodComercio" field="LP.LOGPO_CMCIOPOS_CODIGO" operador="like" prefijo="'%" sufijo="%'" formato="" formatstring="">
+		</filtro>
+		<filtro id="numterminal" controlid="txtNumTerminal" field="LP.LOGPO_NRO_POS" operador="like" prefijo="'%" sufijo="%'" formato="" formatstring="">
+		</filtro>
+		<filtro id="idtransaccion" controlid="txtIdTran" field="LP.LOGPO_ID_TRANSACCION" operador="like" prefijo="'%" sufijo="%'" formato="" formatstring="">
+		</filtro>
+		<filtro id="fechaini" controlid="txtFechaINI" field="LP.LOGPO_FECHAYHORA" operador=">=" prefijo="TIMESTAMP_ISO('" sufijo="')" formato="DT" formatstring="yyyy-MM-dd">
+		</filtro>
+		<filtro id="fechafin" controlid="txtFechaFIN" field="LP.LOGPO_FECHAYHORA" operador="&lt;" prefijo="TIMESTAMP_ISO('" sufijo="') + 1 DAY" formato="DT" formatstring="yyyy-MM-dd">
+		</filtro>
+
+		<filtro id="servicio" controlid="cmbServicio" field="LP.LOGPO_SERVI_CODIGO" operador="=" prefijo="" sufijo="" formato="" formatstring="">
+		</filtro>
+		<filtro id="estado" controlid="cmbEstado" field="LP.LOGPO_ESTADO_PEDIDO" operador="=" prefijo="'" sufijo="'" formato="" formatstring="">
+		</filtro>
+		<filtro id="numaut" controlid="txtDatosApp1" field="LP.LOGPO_COD_AUTORIZACION" operador="=" prefijo="'" sufijo="'" formato="AN" formatstring="">
+		</filtro>
+
+	</filtros>
+	
+	<filtrosespeciales>
+		<filtroesp id="lnumaut" controlid="lDatosApp1" text="Num. autoriz." maxlen="0" format="AN" ancho="0">
+		</filtroesp>
+		<filtroesp id="txtnumaut" controlid="txtDatosApp1" text="" maxlen="6" format="AN" ancho="60">
+		</filtroesp>
+	</filtrosespeciales>
+
+	<estados>
+		<estado id="todos" codrespuesta="999" descripcion="TODOS">
+		</estado>
+		<estado id="aprobado" codrespuesta="00" descripcion="APROBADO">
+		</estado>
+		<estado id="denegado" codrespuesta="50" descripcion="DENEGADO POR BANCO">
+		</estado>
+		<estado id="timeout" codrespuesta="62" descripcion="SIN RESPUESTA DE BANCO">
+		</estado>
+		<estado id="timeout" codrespuesta="49" descripcion="ERROR DE FORMATO">
+		</estado>
+		<estado id="timeout" codrespuesta="43" descripcion="TRX NO ENCONTRADA">
+		</estado>
+	</estados>
+	
+</config>

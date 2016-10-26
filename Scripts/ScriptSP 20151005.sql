@@ -1,0 +1,2084 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spLOGINWebComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spLOGINWebComercio (
+IN PUSUARIOLOGIN VARCHAR(20),
+IN PPASSWORD VARCHAR(20),
+OUT PIDUSUARIO INTEGER,
+OUT PIDGRUPO INTEGER,
+OUT PNOMGRUPO VARCHAR(50),
+OUT PFLAGADMIN INTEGER,
+OUT CR CHAR(2),
+OUT PMENSAJE VARCHAR(100) )
+	SPECIFIC "SQMNUC".spLOGINWebComercio
+	LANGUAGE SQL
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+DECLARE SQLCODE INTEGER DEFAULT 0;
+declare iIdUsuario INTEGER;
+declare iIdGrupo INTEGER;
+declare iFlagAdmin INTEGER;
+declare sPassword varchar(20);
+declare sNomComercio varchar(50);
+declare sNomGrupo varchar(50);
+declare sNombre varchar(30);
+declare sApellidoP varchar(30);
+declare sEmail varchar(50);
+
+DECLARE curUsuario CURSOR FOR
+SELECT	UG.IDUSUARIO, UG.PASSWORD, UG.IDGRUPO, UG.NOMBRE, UG.APELLIDOP, UG.EMAIL, COALESCE(GC.NOMBRE_GRUPO,''), COALESCE(UG.FLAGADMIN, 0)
+FROM SQMNUC.USUARIO_COMERCIO_CONS  UG, SQMNUC.GRUPO_COMERCIO GC
+WHERE
+UG.LOGIN = PUSUARIOLOGIN
+AND UG.IDGRUPO = GC.IDGRUPO;
+--AND CO.CMCIO_ID = UC.CMCIO_ID;
+--AND U.USUARIO_PASSWORD = PPASSWORD;
+
+OPEN curUsuario;
+fetch curUsuario
+into iIdUsuario, sPassword, iIdGrupo, sNombre, sApellidoP, sEmail, sNomGrupo, iFlagAdmin;
+
+IF (SQLCODE = 0) THEN
+
+	IF (sPassword = PPASSWORD) THEN
+		SET PMENSAJE = 'LOGIN OK';
+		SET PIDUSUARIO = iIdUsuario;
+		SET PIDGRUPO = iIdGrupo;
+		SET PNOMGRUPO = sNomGrupo;
+		SET PFLAGADMIN = iFlagAdmin;
+		--SET PNOMCOMERCIO = sNomComercio;
+		SET CR='00';
+	ELSE
+		--SET PMENSAJE = 'PASSWORD NO COINCIDE';
+		SET PMENSAJE = 'VERIFIQUE SU NOMBRE DE USUARIO Y CONTRASEÑA';
+		SET CR='02';
+	END IF;
+
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PMENSAJE = 'VERIFIQUE SU NOMBRE DE USUARIO Y CONTRASEÑA';
+	SET CR='01';
+END IF;
+close curUsuario;
+
+END P1
+
+@
+COMMENT ON  SPECIFIC PROCEDURE "SQMNUC".spLOGINWebComercio IS 'Login para el modulo de consultas web de comercios'
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spLOGINWebComercio TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spLOGINWebVisanet
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spLOGINWebVisanet (
+IN PUSUARIOLOGIN VARCHAR(20),
+IN PPASSWORD VARCHAR(20),
+OUT PIDUSUARIO INTEGER,
+OUT PNIVEL INTEGER,
+OUT PNOMBRE VARCHAR(50),
+OUT PAPATERNO VARCHAR(50),
+OUT PEMAIL VARCHAR(50),
+OUT CR CHAR(2),
+OUT PMENSAJE VARCHAR(100) )
+	SPECIFIC "SQMNUC".spLOGINWebVisanet
+	LANGUAGE SQL
+
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+
+P1: BEGIN
+-- Declare cursors
+DECLARE SQLCODE INTEGER DEFAULT 0;
+declare iIdUsuario INTEGER;
+declare iNivel INTEGER;
+declare sPassword varchar(20);
+declare sNomComercio varchar(50);
+declare sNombre varchar(50);
+declare sApellidoP varchar(50);
+declare sEmail varchar(50);
+
+DECLARE curUsuario CURSOR FOR
+SELECT	UA.IDUSUARIO, UA.PASSWORD, UA.NOMBRE, UA.APELLIDOP, UA.EMAIL, UA.NIVEL, UA.APELLIDOP, UA.EMAIL
+FROM SQMNUC.USUARIO_ADMIN UA
+WHERE
+UA.LOGIN = PUSUARIOLOGIN;
+
+OPEN curUsuario;
+fetch curUsuario
+into iIdUsuario, sPassword, sNombre, sApellidoP, sEmail, iNivel, sApellidoP, sEmail;
+
+IF (SQLCODE = 0) THEN
+
+	IF (sPassword = PPASSWORD) THEN
+		SET PMENSAJE = 'LOGIN OK';
+		SET PIDUSUARIO = iIdUsuario;
+		SET PNIVEL = iNivel;
+		SET PNOMBRE = sNombre;
+		SET PAPATERNO = sApellidoP;
+		SET PEMAIL = sEmail;
+		--SET PNOMCOMERCIO = sNomComercio;
+		SET CR='00';
+	ELSE
+		--SET PMENSAJE = 'PASSWORD NO COINCIDE';
+		SET PMENSAJE = 'VERIFIQUE SU NOMBRE DE USUARIO Y CONTRASEÑA';
+		SET CR='02';
+	END IF;
+
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PMENSAJE = 'VERIFIQUE SU NOMBRE DE USUARIO Y CONTRASEÑA';
+	SET CR='01';
+END IF;
+close curUsuario;
+
+END P1
+@
+COMMENT ON  SPECIFIC PROCEDURE "SQMNUC".spLOGINWebVisanet IS 'Login para el modulo de consultas web de usuarios Visanet'
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spLOGINWebVisanet TO PUBLIC
+@
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spLOGINWeb
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spLOGINWeb (
+IN PCODCOMERCIO VARCHAR(15),
+IN PUSUARIOLOGIN VARCHAR(20),
+IN PPASSWORD VARCHAR(20),
+OUT PIDUSUARIO VARCHAR(20),
+OUT PIDCOMERCIO INTEGER,
+OUT PNOMCOMERCIO VARCHAR(50),
+OUT PTIPOUSUARIO VARCHAR(1),
+OUT CR CHAR(2),
+OUT PMENSAJE VARCHAR(100) )
+	SPECIFIC "SQMNUC".spLOGINWeb
+	LANGUAGE SQL
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+DECLARE SQLCODE INTEGER DEFAULT 0;
+declare sCodUsuario varchar(20);
+declare sPassword varchar(20);
+declare iIdComercio INTEGER;
+declare sNomComercio varchar(50);
+declare sTipoUsuario varchar(1);
+
+DECLARE curUsuario CURSOR FOR
+SELECT	UC.USUARIO_CODIGO,  UC.CMCIO_ID, U.USUARIO_PASSWORD, CO.CMCIO_NOMBRE, U.USUARIO_TIPO
+FROM SQMNUC.USUARIO_COMERCIO UC, SQMNUC.USUARIO U, SQMNUC.COMERCIO CO
+WHERE
+UC.CMCIO_CODIGO = PCODCOMERCIO
+AND UC.USUARIO_CODIGO = U.USUARIO_CODIGO
+AND U.USUARIO_ID = PUSUARIOLOGIN
+AND CO.CMCIO_ID = UC.CMCIO_ID
+AND UC.CMCIO_CODIGO = CO.CMCIO_CODIGO;
+--AND U.USUARIO_PASSWORD = PPASSWORD;
+
+OPEN curUsuario;
+fetch curUsuario
+into sCodUsuario, iIdComercio, sPassword, sNomComercio, sTipoUsuario;
+
+IF (SQLCODE = 0) THEN
+
+	IF (sPassword = PPASSWORD) THEN
+		SET PMENSAJE = 'LOGIN OK';
+		SET PIDUSUARIO = sCodUsuario;
+		SET PIDCOMERCIO = iIdComercio;
+		SET PNOMCOMERCIO = sNomComercio;
+		SET PTIPOUSUARIO = sTipoUsuario;
+		SET CR='00';
+	ELSE
+		--SET PMENSAJE = 'PASSWORD NO COINCIDE';
+		SET PMENSAJE = 'VERIFIQUE SU NOMBRE DE USUARIO Y CONTRASEÑA';
+		SET CR='02';
+	END IF;
+
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PMENSAJE = 'VERIFIQUE SU NOMBRE DE USUARIO Y CONTRASEÑA';
+	SET CR='01';
+END IF;
+close curUsuario;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spLOGINWeb TO PUBLIC
+@
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTInsertGrupoComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTInsertGrupoComercio (
+OUT PIDGRUPO INTEGER,
+IN PCMCIOID INT,
+IN PCODGRUPO VARCHAR(11),
+IN PNOMGRUPO VARCHAR(50),
+IN PDESCGRUPO VARCHAR(100),
+IN PFLAGRUC INTEGER,
+IN PRUC DECIMAL(15),
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTInsertGrupoComercio
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+
+IF EXISTS (SELECT COD_GRUPO FROM SQMNUC.GRUPO_COMERCIO WHERE COD_GRUPO = PCODGRUPO AND CMCIO_ID = PCMCIOID) THEN
+
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'GRUPO YA EXISTE';
+	SET PCR='01';
+
+ELSE
+	INSERT INTO SQMNUC.GRUPO_COMERCIO (COD_GRUPO, CMCIO_ID, NOMBRE_GRUPO, DESC_GRUPO, FLAG_RUC, RUC, FECHAINSERT, FECHAULTACTUALIZ)
+	VALUES
+	(PCODGRUPO, PCMCIOID, PNOMGRUPO, PDESCGRUPO, PFLAGRUC, PRUC, CURRENT TIMESTAMP, CURRENT TIMESTAMP);
+
+	SET PIDGRUPO = IDENTITY_VAL_LOCAL();
+
+SET PDESCERROR = 'REGISTRO OK';
+	SET PCR='00';
+END IF;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTInsertGrupoComercio TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTInsertUsuarioComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTInsertUsuarioComercio (
+IN PIDGRUPO INTEGER,
+IN PFLAGADMIN INTEGER,
+IN PLOGINUSUARIO VARCHAR(20),
+IN PPWDUSUARIO VARCHAR(20),
+IN PNOMBRE VARCHAR(50),
+IN PAPELLIDOP VARCHAR(50),
+IN PEMAIL VARCHAR(50),
+IN PESTADOUSUARIO VARCHAR(1),
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTInsertUsuarioComercio
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+
+IF EXISTS (SELECT IDUSUARIO FROM SQMNUC.USUARIO_COMERCIO_CONS WHERE LOGIN = PLOGINUSUARIO) THEN
+
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'USUARIO YA EXISTE';
+	SET PCR='01';
+
+ELSE
+	INSERT INTO SQMNUC.USUARIO_COMERCIO_CONS (IDGRUPO, FLAGADMIN, LOGIN, PASSWORD, NOMBRE, APELLIDOP, EMAIL, ESTADO, FECHAINSERT, FECHAULTACTUALIZ)
+	VALUES
+	(PIDGRUPO, PFLAGADMIN, PLOGINUSUARIO, PPWDUSUARIO, PNOMBRE, PAPELLIDOP, PEMAIL, PESTADOUSUARIO, CURRENT TIMESTAMP, CURRENT TIMESTAMP);
+
+SET PDESCERROR = 'REGISTRO OK';
+	SET PCR='00';
+END IF;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTInsertUsuarioComercio TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTInsertUsuarioVisanet
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTInsertUsuarioVisanet (
+IN PLOGINUSUARIO VARCHAR(20),
+IN PPWDUSUARIO VARCHAR(20),
+IN PNOMBRE VARCHAR(50),
+IN PAPELLIDOP VARCHAR(50),
+IN PEMAIL VARCHAR(50),
+IN PNIVEL INTEGER,
+IN PESTADOUSUARIO VARCHAR(1),
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTInsertUsuarioVisanet
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+
+IF EXISTS (SELECT IDUSUARIO FROM SQMNUC.USUARIO_ADMIN WHERE LOGIN = PLOGINUSUARIO) THEN
+
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'USUARIO YA EXISTE';
+	SET PCR='01';
+
+ELSE
+	INSERT INTO SQMNUC.USUARIO_ADMIN (LOGIN, PASSWORD, NOMBRE, APELLIDOP, EMAIL, ESTADO, NIVEL, FECHAINSERT, FECHAULTACTUALIZ)
+	VALUES
+	(PLOGINUSUARIO, PPWDUSUARIO, PNOMBRE, PAPELLIDOP, PEMAIL, PESTADOUSUARIO, PNIVEL, CURRENT TIMESTAMP, CURRENT TIMESTAMP);
+
+SET PDESCERROR = 'REGISTRO OK';
+	SET PCR='00';
+END IF;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTInsertUsuarioVisanet TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTResetPwdUsuarioComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTResetPwdUsuarioComercio (
+IN PIDUSUARIOCONSULTA INTEGER,
+IN PPASSWORD VARCHAR(20),
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTResetPwdUsuarioComercio
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+
+IF EXISTS (SELECT IDUSUARIO FROM SQMNUC.USUARIO_COMERCIO_CONS WHERE IDUSUARIO = PIDUSUARIOCONSULTA) THEN
+
+	UPDATE SQMNUC.USUARIO_COMERCIO_CONS
+	SET
+		PASSWORD = PPASSWORD,
+		FECHAULTACTUALIZ = CURRENT TIMESTAMP
+	WHERE IDUSUARIO = PIDUSUARIOCONSULTA;
+
+	SET PDESCERROR = 'ACTUALIZACION OK';
+	SET PCR='00';
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'USUARIO NO ENCONTRADO';
+	SET PCR='01';
+END IF;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTResetPwdUsuarioComercio TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTUpdateGrupoComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTUpdateGrupoComercio (
+IN PIDGRUPOCONSULTA INTEGER,
+IN PCMCIOID INTEGER,
+IN PCODGRUPO VARCHAR(11),
+IN PNOMGRUPO VARCHAR(50),
+IN PDESCGRUPO VARCHAR(100),
+IN PFLAGRUC INTEGER,
+IN PRUC DECIMAL(15),
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTUpdateGrupoComercio
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+
+IF EXISTS (SELECT IDGRUPO FROM SQMNUC.GRUPO_COMERCIO WHERE IDGRUPO = PIDGRUPOCONSULTA) THEN
+
+	UPDATE SQMNUC.GRUPO_COMERCIO
+	SET
+		NOMBRE_GRUPO = PNOMGRUPO,
+		COD_GRUPO = PCODGRUPO,
+		DESC_GRUPO = PDESCGRUPO,
+		FLAG_RUC = PFLAGRUC,
+		RUC = PRUC,
+		CMCIO_ID = PCMCIOID,
+		FECHAULTACTUALIZ = CURRENT TIMESTAMP
+	WHERE IDGRUPO = PIDGRUPOCONSULTA;
+
+	SET PDESCERROR = 'ACTUALIZACION OK';
+	SET PCR='00';
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'GRUPO NO ENCONTRADO';
+	SET PCR='01';
+END IF;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTUpdateGrupoComercio TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTUpdateServicioConsulta
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTUpdateServicioConsulta (
+IN POPCION CHAR(1),
+IN PIDGRUPO INTEGER,
+IN PIDSERVICIO INTEGER,
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTUpdateServicioConsulta
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+
+IF POPCION = 'A' THEN
+	IF EXISTS (SELECT IDGRUPO FROM SQMNUC.SERVICIO_CONSULTA WHERE IDGRUPO = PIDGRUPO AND SERVI_CODIGO = PIDSERVICIO) THEN
+
+		SET PDESCERROR = 'SERVICIO YA REGISTRADO';
+		SET PCR='01';
+
+	ELSE
+		INSERT INTO SQMNUC.SERVICIO_CONSULTA (IDGRUPO, SERVI_CODIGO, FECHAINSERT, FECHAULTACTUALIZ)
+		VALUES (PIDGRUPO, PIDSERVICIO, CURRENT TIMESTAMP, CURRENT TIMESTAMP);
+		SET PCR='00';
+		--SET PMENSAJE = 'USUARIO NO EXISTE';
+	END IF;
+
+END IF;
+
+
+IF POPCION = 'R' THEN
+	IF EXISTS (SELECT IDGRUPO FROM SQMNUC.SERVICIO_CONSULTA WHERE IDGRUPO = PIDGRUPO AND SERVI_CODIGO = PIDSERVICIO) THEN
+
+		DELETE FROM SQMNUC.SERVICIO_CONSULTA WHERE IDGRUPO = PIDGRUPO AND SERVI_CODIGO = PIDSERVICIO;
+		SET PCR='00';
+
+	ELSE
+		SET PDESCERROR = 'SERVICIO NO ESTA ASOCIADO AL GRUPO';
+		SET PCR='01';
+
+		--SET PMENSAJE = 'USUARIO NO EXISTE';
+	END IF;
+
+END IF;
+
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTUpdateServicioConsulta TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTUpdateServicioEmpresa
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTUpdateServicioEmpresa (
+IN POPCION CHAR(1),
+IN PCMCIOID INTEGER,
+IN PIDSERVICIO INTEGER,
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTUpdateServicioEmpresa
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+
+IF POPCION = 'A' THEN
+	IF EXISTS (SELECT CMCIO_ID FROM SQMNUC.SERVICIOXEMPRESA WHERE CMCIO_ID = PCMCIOID AND SERVI_CODIGO = PIDSERVICIO) THEN
+
+		SET PDESCERROR = 'SERVICIO YA REGISTRADO';
+		SET PCR='01';
+
+	ELSE
+		INSERT INTO SQMNUC.SERVICIOXEMPRESA (CMCIO_ID, SERVI_CODIGO, FECHAINSERT, FECHAULTACTUALIZ)
+		VALUES (PCMCIOID, PIDSERVICIO, CURRENT TIMESTAMP, CURRENT TIMESTAMP);
+		SET PCR='00';
+		--SET PMENSAJE = 'USUARIO NO EXISTE';
+	END IF;
+
+END IF;
+
+
+IF POPCION = 'R' THEN
+	IF EXISTS (SELECT CMCIO_ID FROM SQMNUC.SERVICIOXEMPRESA WHERE CMCIO_ID = PCMCIOID AND SERVI_CODIGO = PIDSERVICIO) THEN
+
+		DELETE FROM SQMNUC.SERVICIOXEMPRESA WHERE CMCIO_ID = PCMCIOID AND SERVI_CODIGO = PIDSERVICIO;
+		SET PCR='00';
+
+	ELSE
+		SET PDESCERROR = 'SERVICIO NO ESTA ASOCIADO A LA EMPRESA';
+		SET PCR='01';
+
+		--SET PMENSAJE = 'USUARIO NO EXISTE';
+	END IF;
+
+END IF;
+
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTUpdateServicioEmpresa TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTUpdateUsuarioComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTUpdateUsuarioComercio (
+IN PIDUSUARIOCONSULTA INTEGER,
+IN PIDGRUPO INTEGER,
+IN PFLAGADMIN INTEGER,
+IN PLOGINUSUARIO VARCHAR(20),
+IN PNOMBRE VARCHAR(50),
+IN PAPELLIDOP VARCHAR(50),
+IN PEMAIL VARCHAR(50),
+IN PESTADOUSUARIO VARCHAR(1),
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTUpdateUsuarioComercio
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+
+IF EXISTS (SELECT IDUSUARIO FROM SQMNUC.USUARIO_COMERCIO_CONS WHERE IDUSUARIO = PIDUSUARIOCONSULTA) THEN
+
+	UPDATE SQMNUC.USUARIO_COMERCIO_CONS
+	SET
+		IDGRUPO = PIDGRUPO,
+		FLAGADMIN = PFLAGADMIN,
+		NOMBRE = PNOMBRE,
+		APELLIDOP = PAPELLIDOP,
+		EMAIL = PEMAIL,
+		ESTADO = PESTADOUSUARIO,
+		FECHAULTACTUALIZ = CURRENT TIMESTAMP
+	WHERE IDUSUARIO = PIDUSUARIOCONSULTA;
+
+	SET PDESCERROR = 'ACTUALIZACION OK';
+	SET PCR='00';
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'USUARIO NO ENCONTRADO';
+	SET PCR='01';
+END IF;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTUpdateUsuarioComercio TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTUpdateUsuarioVisanet
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTUpdateUsuarioVisanet (
+IN PIDUSUARIOCONSULTA INTEGER,
+IN PLOGINUSUARIO VARCHAR(20),
+IN PNOMBRE VARCHAR(50),
+IN PAPELLIDOP VARCHAR(50),
+IN PEMAIL VARCHAR(50),
+IN PNIVEL INTEGER,
+IN PESTADOUSUARIO VARCHAR(1),
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTUpdateUsuarioVisanet
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+
+IF EXISTS (SELECT IDUSUARIO FROM SQMNUC.USUARIO_ADMIN WHERE IDUSUARIO = PIDUSUARIOCONSULTA) THEN
+
+	UPDATE SQMNUC.USUARIO_ADMIN
+	SET
+		NOMBRE = PNOMBRE,
+		APELLIDOP = PAPELLIDOP,
+		EMAIL = PEMAIL,
+		NIVEL = PNIVEL,
+		ESTADO = PESTADOUSUARIO,
+		FECHAULTACTUALIZ = CURRENT TIMESTAMP
+	WHERE IDUSUARIO = PIDUSUARIOCONSULTA;
+
+	SET PDESCERROR = 'ACTUALIZACION OK';
+	SET PCR='00';
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'USUARIO NO ENCONTRADO';
+	SET PCR='01';
+END IF;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTUpdateUsuarioVisanet TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spQRYComercioConsulta
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spQRYComercioConsulta (
+IN PIDGRUPOCONSULTA INTEGER,
+IN PCODCOMERCIO VARCHAR(9),
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100))
+
+	SPECIFIC "SQMNUC".spQRYComercioConsulta
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+DECLARE V_DYNAMIC VARCHAR(3000);
+DECLARE V_SQL VARCHAR(3000);
+DECLARE V_SQL_SELECT VARCHAR(1000);
+DECLARE V_SQL_WHERE VARCHAR(1000);
+DECLARE V_SQL_ORDER VARCHAR(1000);
+
+-- Declare cursors
+DECLARE CURUSUARIO CURSOR WITH RETURN FOR V_DYNAMIC;
+
+SET V_SQL_SELECT= '';
+SET V_SQL_WHERE = '';
+SET V_SQL_ORDER = '';
+
+SET V_SQL_SELECT = 'SELECT IDGRUPO, CODCOMERCIO, FECHAINSERT, FECHAULTACTUALIZ FROM SQMNUC.COMERCIO_CONSULTA';
+SET V_SQL_WHERE = ' ' ;
+
+
+	IF RTRIM(COALESCE(PIDGRUPOCONSULTA,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' IDGRUPO =' || RTRIM(CAST(CAST(PIDGRUPOCONSULTA AS CHAR(3)) AS VARCHAR(3))) || '';
+	END IF;
+
+	IF RTRIM(COALESCE(PCODCOMERCIO,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' CODCOMERCIO LIKE ''%' || PCODCOMERCIO || '%''';
+	END IF;
+
+SET V_SQL_ORDER = ' ORDER BY CODCOMERCIO';
+
+SET V_SQL = V_SQL_SELECT || V_SQL_WHERE || V_SQL_ORDER;
+
+PREPARE V_DYNAMIC FROM V_SQL;
+
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+
+	SET PCR = '00';
+	SET PDESCERROR = 'CONSULTA OK';
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spQRYComercioConsulta TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spQRYDetalleGrupoComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spQRYDetalleGrupoComercio (
+IN PIDGRUPOCONSULTA INTEGER,
+OUT PCMCIOID INTEGER,
+OUT PCODGRUPO VARCHAR(11),
+OUT PNOMGRUPO VARCHAR(50),
+OUT PCMCIONOMBRE VARCHAR(50),
+OUT PDESCGRUPO VARCHAR(100),
+OUT PFLAGRUC INTEGER,
+OUT PRUC DECIMAL(15),
+OUT PFECHAINSERT TIMESTAMP,
+OUT PFECHAULTACTUALIZ TIMESTAMP,
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100)  )
+	SPECIFIC SQMNUC.spQRYDetalleGrupoComercio
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+-- Declare cursors
+DECLARE SQLCODE INTEGER DEFAULT 0;
+declare iIdGrupo INTEGER;
+declare sCodGrupo VARCHAR(11);
+declare sNomGrupo VARCHAR(50);
+declare sDescGrupo VARCHAR(100);
+declare iFlagRUC INT;
+declare iCmcioId INT;
+declare sCmcioNombre VARCHAR(50);
+declare iRUC DECIMAL(15);
+declare dFechaInsert TIMESTAMP;
+declare dFechaUltActualiz TIMESTAMP;
+
+DECLARE CURUSUARIO CURSOR FOR
+	SELECT GC.IDGRUPO, GC.CMCIO_ID, GC.COD_GRUPO, GC.NOMBRE_GRUPO, GC.FLAG_RUC, GC.RUC, GC.DESC_GRUPO, C.CMCIO_NOMBRE, GC.FECHAINSERT, GC.FECHAULTACTUALIZ
+	FROM SQMNUC.GRUPO_COMERCIO GC, SQMNUC.COMERCIO C
+	WHERE GC.IDGRUPO = PIDGRUPOCONSULTA AND GC.CMCIO_ID = C.CMCIO_ID;
+
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+	FETCH CURUSUARIO INTO
+	iIdGrupo, iCmcioId, sCodGrupo, sNomGrupo, iFlagRUC, iRUC, sDescGrupo, sCmcioNombre, dFechaInsert, dFechaUltActualiz;
+
+IF (SQLCODE = 0) THEN
+
+--INSERT INTO SQMNUC.ANALISIS (FECHAINSERT, DATA) VALUES  (CURRENT TIMESTAMP, ' ENCONTRO RESULTADOS =' || RTRIM(CAST( AS VARCHAR(2))));
+
+	SET PCODGRUPO = sCodGrupo;
+	SET PNOMGRUPO = sNomGrupo;
+	SET PDESCGRUPO = sDescGrupo;
+	SET PFLAGRUC = iFlagRUC;
+	SET PRUC = iRUC;
+	SET PCMCIOID = iCmcioId;
+	SET PCMCIONOMBRE = sCmcioNombre;
+
+	SET PFECHAINSERT = dFechaInsert;
+	SET PFECHAULTACTUALIZ = dFechaInsert;
+	--SET PNOMCOMERCIO = sNomComercio;
+	SET PCR='00';
+	SET PDESCERROR = 'CONSULTA OK';
+
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'GRUPO NO ENCONTRADO';
+	SET PCR='01';
+END IF;
+close CURUSUARIO;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spQRYDetalleGrupoComercio TO PUBLIC
+@
+
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spQRYDetalleUsuarioComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spQRYDetalleUsuarioComercio (
+IN PIDUSUARIOCONSULTA INTEGER,
+OUT PIDGRUPO INTEGER,
+OUT PFLAGADMIN INTEGER,
+OUT PLOGINUSUARIO VARCHAR(20),
+OUT PNOMBRE VARCHAR(50),
+OUT PAPELLIDOP VARCHAR(50),
+OUT PEMAIL VARCHAR(50),
+OUT PESTADOUSUARIO VARCHAR(1),
+OUT PFECHAINSERT TIMESTAMP,
+OUT PFECHAULTACTUALIZ TIMESTAMP,
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100)  )
+	SPECIFIC SQMNUC.spQRYDetalleUsuarioComercio
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+-- Declare cursors
+DECLARE SQLCODE INTEGER DEFAULT 0;
+declare iIdUsuarioConsulta INTEGER;
+declare iFlagAdmin INTEGER;
+declare iIdGrupo INTEGER;
+declare sLogin varchar(20);
+declare sNombre varchar(50);
+declare sApellidoP varchar(50);
+declare sPassword varchar(20);
+declare sEmail varchar(50);
+declare sEstado char(1);
+declare dFechaInsert TIMESTAMP;
+declare dFechaUltActualiz TIMESTAMP;
+
+DECLARE CURUSUARIO CURSOR FOR
+	SELECT FLAGADMIN, IDGRUPO, LOGIN, NOMBRE, APELLIDOP, EMAIL, ESTADO, FECHAINSERT, FECHAULTACTUALIZ
+	FROM SQMNUC.USUARIO_COMERCIO_CONS
+	WHERE IDUSUARIO = PIDUSUARIOCONSULTA;
+
+--INSERT INTO SQMNUC.ANALISIS (FECHAINSERT, DATA) VALUES  (CURRENT TIMESTAMP, ' USUARIO A BUSCAR =');
+--INSERT INTO SQMNUC.ANALISIS (FECHAINSERT, DATA) VALUES  (CURRENT TIMESTAMP, CAST(PIDUSUARIOCONSULTA AS VARCHAR(2)));
+--INSERT INTO SQMNUC.ANALISIS (FECHAINSERT, DATA) VALUES  (CURRENT TIMESTAMP, CAST(99 AS VARCHAR(2)));
+
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+	FETCH CURUSUARIO INTO
+	iFlagAdmin, iIdGrupo, sLogin, sNombre, sApellidoP, sEmail, sEstado, dFechaInsert, dFechaUltActualiz;
+
+IF (SQLCODE = 0) THEN
+
+--INSERT INTO SQMNUC.ANALISIS (FECHAINSERT, DATA) VALUES  (CURRENT TIMESTAMP, ' ENCONTRO RESULTADOS =' || RTRIM(CAST( AS VARCHAR(2))));
+
+	SET PIDGRUPO = iIdGrupo;
+	SET PFLAGADMIN = iFlagAdmin;
+	SET PLOGINUSUARIO = sLogin;
+	SET PNOMBRE = sNombre;
+	SET PAPELLIDOP = sApellidoP;
+	SET PEMAIL = sEmail;
+	SET PESTADOUSUARIO = sEstado;
+
+	SET PFECHAINSERT = dFechaInsert;
+	SET PFECHAULTACTUALIZ = dFechaInsert;
+	--SET PNOMCOMERCIO = sNomComercio;
+	SET PCR='00';
+	SET PDESCERROR = 'CONSULTA OK';
+
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'USUARIO NO ENCONTRADO';
+	SET PCR='01';
+END IF;
+close CURUSUARIO;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spQRYDetalleUsuarioComercio TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spQRYDetalleUsuarioVisanet
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spQRYDetalleUsuarioVisanet (
+IN PIDUSUARIOCONSULTA INTEGER,
+OUT PLOGINUSUARIO VARCHAR(20),
+OUT PNOMBRE VARCHAR(50),
+OUT PAPELLIDOP VARCHAR(50),
+OUT PEMAIL VARCHAR(50),
+OUT PNIVEL INTEGER,
+OUT PESTADOUSUARIO VARCHAR(1),
+OUT PFECHAINSERT TIMESTAMP,
+OUT PFECHAULTACTUALIZ TIMESTAMP,
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100)  )
+	SPECIFIC SQMNUC.spQRYDetalleUsuarioVisanet
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+-- Declare cursors
+DECLARE SQLCODE INTEGER DEFAULT 0;
+declare iIdUsuarioConsulta INTEGER;
+declare sLogin varchar(20);
+declare sPassword varchar(20);
+declare sNombre varchar(50);
+declare sApellidoP varchar(50);
+declare sEmail varchar(50);
+declare sEstado char(1);
+declare iNivel INTEGER;
+declare dFechaInsert TIMESTAMP;
+declare dFechaUltActualiz TIMESTAMP;
+
+DECLARE CURUSUARIO CURSOR FOR
+	SELECT LOGIN, NOMBRE, APELLIDOP, EMAIL, ESTADO, NIVEL, FECHAINSERT, FECHAULTACTUALIZ
+	FROM SQMNUC.USUARIO_ADMIN
+	WHERE IDUSUARIO = PIDUSUARIOCONSULTA;
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+	FETCH CURUSUARIO INTO
+	sLogin, sNombre, sApellidoP, sEmail, sEstado, iNivel, dFechaInsert, dFechaUltActualiz;
+
+IF (SQLCODE = 0) THEN
+
+	SET PLOGINUSUARIO = sLogin;
+	SET PNOMBRE = sNombre;
+	SET PAPELLIDOP = sApellidoP;
+	SET PEMAIL = sEmail;
+	SET PESTADOUSUARIO = sEstado;
+	SET PNIVEL = iNivel;
+	SET PFECHAINSERT = dFechaInsert;
+	SET PFECHAULTACTUALIZ = dFechaInsert;
+	--SET PNOMCOMERCIO = sNomComercio;
+	SET PCR='00';
+	SET PDESCERROR = 'CONSULTA OK';
+
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'USUARIO NO ENCONTRADO';
+	SET PCR='01';
+END IF;
+close CURUSUARIO;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spQRYDetalleUsuarioVisanet TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spQRYEmpresa
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spQRYEmpresa (
+IN PCMCIOID INTEGER,
+IN PNOMCOMERCIO VARCHAR(50),
+IN PESTADOCOMERCIO VARCHAR(1),
+IN PIDSERVICIO INTEGER,
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100))
+
+	SPECIFIC "SQMNUC".spQRYEmpresa
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+DECLARE V_DYNAMIC VARCHAR(1000);
+DECLARE V_SQL VARCHAR(1000);
+DECLARE V_SQL_SELECT VARCHAR(1000);
+DECLARE V_SQL_WHERE VARCHAR(1000);
+
+-- Declare cursors
+DECLARE CURUSUARIO CURSOR WITH RETURN FOR V_DYNAMIC;
+
+SET V_SQL_SELECT= '';
+SET V_SQL_WHERE = '';
+
+SET V_SQL_SELECT = 'SELECT CMCIO_ID, SERVI_CODIGO, CMCIO_CODIGO, CMCIO_NOMBRE, CMCIO_RAZONSOCIAL, CMCIO_RUC, CMCIO_ESTADO FROM SQMNUC.COMERCIO';
+
+	IF RTRIM(COALESCE(PCMCIOID,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' CMCIO_ID =' || RTRIM(CAST(CAST(PCMCIOID AS CHAR(3)) AS VARCHAR(3))) || '';
+	END IF;
+
+	IF RTRIM(COALESCE(PNOMCOMERCIO,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' CMCIO_NOMBRE LIKE ''%' || PNOMCOMERCIO || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PESTADOCOMERCIO,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' CMCIO_ESTADO LIKE ''%' || PESTADOCOMERCIO || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PIDSERVICIO,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' SERVI_CODIGO =' || RTRIM(CAST(CAST(PIDSERVICIO AS CHAR(1)) AS VARCHAR(1))) || '';
+	END IF;
+
+
+SET V_SQL = V_SQL_SELECT || V_SQL_WHERE;
+
+PREPARE V_DYNAMIC FROM V_SQL;
+
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+
+	SET PCR = '00';
+	SET PDESCERROR = 'CONSULTA OK';
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spQRYEmpresa TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spQRYGrupoComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spQRYGrupoComercio (
+IN PIDGRUPO INTEGER,
+IN PCMCIOID INTEGER,
+IN PCODGRUPO VARCHAR(11),
+IN PNOMGRUPO VARCHAR(50),
+IN PFLAGRUC INTEGER,
+IN PRUC DECIMAL(15),
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100))
+
+	SPECIFIC "SQMNUC".spQRYGrupoComercio
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+DECLARE V_DYNAMIC VARCHAR(1000);
+DECLARE V_SQL VARCHAR(1000);
+DECLARE V_SQL_SELECT VARCHAR(1000);
+DECLARE V_SQL_WHERE VARCHAR(1000);
+
+-- Declare cursors
+DECLARE CURUSUARIO CURSOR WITH RETURN FOR V_DYNAMIC;
+
+SET V_SQL_SELECT= '';
+SET V_SQL_WHERE = '';
+
+INSERT INTO SQMNUC.ANALISIS (FECHAINSERT, DATA) VALUES  (CURRENT TIMESTAMP, ' grupo ='|| PNOMGRUPO);
+INSERT INTO SQMNUC.ANALISIS (FECHAINSERT, DATA) VALUES  (CURRENT TIMESTAMP, ' RUC ='|| CAST(CAST(PRUC AS CHAR(15)) AS VARCHAR(15)));
+
+SET V_SQL_SELECT = 'SELECT IDGRUPO, CMCIO_ID, COD_GRUPO, NOMBRE_GRUPO, FLAG_RUC, RUC, DESC_GRUPO FROM SQMNUC.GRUPO_COMERCIO';
+
+	IF RTRIM(COALESCE(PIDGRUPO,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' IDGRUPO =' || RTRIM(CAST(CAST(PIDGRUPO AS CHAR(3)) AS VARCHAR(3))) || '';
+	END IF;
+
+	IF RTRIM(COALESCE(PCMCIOID,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' CMCIO_ID =' || RTRIM(CAST(CAST(PCMCIOID AS CHAR(3)) AS VARCHAR(3))) || '';
+	END IF;
+
+	IF RTRIM(COALESCE(PCODGRUPO,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' COD_GRUPO LIKE ''%' || PCODGRUPO || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PNOMGRUPO,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' NOMBRE_GRUPO LIKE ''%' || PNOMGRUPO || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PFLAGRUC,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' FLAG_RUC =' || RTRIM(CAST(CAST(PFLAGRUC AS CHAR(1)) AS VARCHAR(1))) || '';
+	END IF;
+
+	IF RTRIM(COALESCE(PRUC,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' RUC =' || RTRIM(CAST(CAST(PRUC AS CHAR(15)) AS VARCHAR(15))) || '';
+	END IF;
+
+
+SET V_SQL = V_SQL_SELECT || V_SQL_WHERE;
+
+INSERT INTO SQMNUC.ANALISIS (FECHAINSERT, DATA) VALUES  (CURRENT TIMESTAMP, V_SQL);
+
+PREPARE V_DYNAMIC FROM V_SQL;
+
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+
+	SET PCR = '00';
+	SET PDESCERROR = 'CONSULTA OK';
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spQRYGrupoComercio TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spQRYServicio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spQRYServicio (
+IN PIDSERVICIO INTEGER,
+IN PNOMSERVICIO VARCHAR(50),
+IN PESTADOSERVICIO INTEGER,
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100))
+
+	SPECIFIC "SQMNUC".spQRYServicio
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+DECLARE V_DYNAMIC VARCHAR(1000);
+DECLARE V_SQL VARCHAR(1000);
+DECLARE V_SQL_SELECT VARCHAR(1000);
+DECLARE V_SQL_WHERE VARCHAR(1000);
+
+-- Declare cursors
+DECLARE CURUSUARIO CURSOR WITH RETURN FOR V_DYNAMIC;
+
+SET V_SQL_SELECT= '';
+SET V_SQL_WHERE = '';
+
+SET V_SQL_SELECT = 'SELECT SERVI_CODIGO, SERVI_NOMBRE, SERVI_ESTADO, SERVI_ORDENMENU, SERVI_NODO FROM SQMNUC.SERVICIO';
+
+	IF RTRIM(COALESCE(PIDSERVICIO,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' SERVI_CODIGO =' || RTRIM(CAST(CAST(PIDSERVICIO AS CHAR(3)) AS VARCHAR(3))) || '';
+	END IF;
+
+	IF RTRIM(COALESCE(PNOMSERVICIO,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' SERVI_NOMBRE LIKE ''%' || PNOMSERVICIO || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PESTADOSERVICIO,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' SERVI_ESTADO =' || RTRIM(CAST(CAST(PESTADOSERVICIO AS CHAR(1)) AS VARCHAR(1))) || '';
+	END IF;
+
+
+SET V_SQL = V_SQL_SELECT || V_SQL_WHERE;
+
+PREPARE V_DYNAMIC FROM V_SQL;
+
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+
+	SET PCR = '00';
+	SET PDESCERROR = 'CONSULTA OK';
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spQRYServicio TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spQRYServicioConsulta
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spQRYServicioConsulta (
+IN PIDGRUPOCONSULTA INTEGER,
+IN PIDSERVICIO INTEGER,
+IN PNOMSERVICIO VARCHAR(50),
+IN PESTADOSERVICIO INTEGER,
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100))
+
+	SPECIFIC "SQMNUC".spQRYServicioConsulta
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+DECLARE V_DYNAMIC VARCHAR(3000);
+DECLARE V_SQL VARCHAR(3000);
+DECLARE V_SQL_SELECT VARCHAR(1000);
+DECLARE V_SQL_WHERE VARCHAR(1000);
+DECLARE V_SQL_ORDER VARCHAR(1000);
+
+-- Declare cursors
+DECLARE CURUSUARIO CURSOR WITH RETURN FOR V_DYNAMIC;
+
+SET V_SQL_SELECT= '';
+SET V_SQL_WHERE = '';
+SET V_SQL_ORDER = '';
+
+SET V_SQL_SELECT = 'SELECT GC.NOMBRE_GRUPO, SC.IDGRUPO, SC.SERVI_CODIGO, S.SERVI_NOMBRE, SC.FECHAINSERT, SC.FECHAULTACTUALIZ FROM SQMNUC.SERVICIO_CONSULTA SC, SQMNUC.GRUPO_COMERCIO GC, SQMNUC.SERVICIO S ';
+SET V_SQL_WHERE = ' WHERE SC.IDGRUPO = GC.IDGRUPO AND S.SERVI_CODIGO = SC.SERVI_CODIGO' ;
+
+
+	IF RTRIM(COALESCE(PIDGRUPOCONSULTA,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' SC.IDGRUPO =' || RTRIM(CAST(CAST(PIDGRUPOCONSULTA AS CHAR(3)) AS VARCHAR(3))) || '';
+	END IF;
+
+	IF RTRIM(COALESCE(PIDSERVICIO,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' S.SERVI_CODIGO =' || RTRIM(CAST(CAST(PIDSERVICIO AS CHAR(3)) AS VARCHAR(3))) || '';
+	END IF;
+
+	IF RTRIM(COALESCE(PNOMSERVICIO,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' S.SERVI_NOMBRE LIKE ''%' || PNOMSERVICIO || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PESTADOSERVICIO,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' S.SERVI_ESTADO =' || RTRIM(CAST(CAST(PESTADOSERVICIO AS CHAR(1)) AS VARCHAR(1))) || '';
+	END IF;
+
+SET V_SQL_ORDER = ' ORDER BY S.SERVI_CODIGO';
+
+SET V_SQL = V_SQL_SELECT || V_SQL_WHERE || V_SQL_ORDER;
+
+PREPARE V_DYNAMIC FROM V_SQL;
+
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+
+	SET PCR = '00';
+	SET PDESCERROR = 'CONSULTA OK';
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spQRYServicioConsulta TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spQRYServicioEmpresa
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spQRYServicioEmpresa (
+IN PIDSERVICIO INTEGER,
+IN PIDEMPRESA INTEGER,
+IN PNOMSERVICIO VARCHAR(50),
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100))
+
+	SPECIFIC "SQMNUC".spQRYServicioEmpresa
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+DECLARE V_DYNAMIC VARCHAR(1000);
+DECLARE V_SQL VARCHAR(1000);
+DECLARE V_SQL_SELECT VARCHAR(1000);
+DECLARE V_SQL_WHERE VARCHAR(1000);
+
+-- Declare cursors
+DECLARE CURUSUARIO CURSOR WITH RETURN FOR V_DYNAMIC;
+
+SET V_SQL_SELECT= '';
+SET V_SQL_WHERE = '';
+
+SET V_SQL_SELECT = 'SELECT SE.SERVI_CODIGO, SE.CMCIO_ID, S.SERVI_NOMBRE FROM SQMNUC.SERVICIOXEMPRESA SE, SQMNUC.SERVICIO S';
+
+	SET V_SQL_WHERE =' WHERE SE.SERVI_CODIGO = S.SERVI_CODIGO ';
+	IF RTRIM(COALESCE(PIDSERVICIO,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' SE.SERVI_CODIGO =' || RTRIM(CAST(CAST(PIDSERVICIO AS CHAR(3)) AS VARCHAR(3))) || '';
+	END IF;
+
+	IF RTRIM(COALESCE(PIDEMPRESA,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' SE.CMCIO_ID =' || RTRIM(CAST(CAST(PIDEMPRESA AS CHAR(3)) AS VARCHAR(3))) || '';
+	END IF;
+	IF RTRIM(COALESCE(PNOMSERVICIO,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' S.SERVI_NOMBRE LIKE ''%' || PNOMSERVICIO || '%''';
+	END IF;
+
+
+SET V_SQL = V_SQL_SELECT || V_SQL_WHERE;
+
+PREPARE V_DYNAMIC FROM V_SQL;
+
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+
+	SET PCR = '00';
+	SET PDESCERROR = 'CONSULTA OK';
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spQRYServicioEmpresa TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spQRYUsuarioComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spQRYUsuarioComercio (IN PIDUSUARIOBUSCA INTEGER,
+IN PLOGINUSUARIO VARCHAR(30),
+IN PNOMBRE VARCHAR(50),
+IN PAPATERNO VARCHAR(50),
+IN PEMAIL VARCHAR(50),
+IN PIDGRUPO INTEGER,
+IN PCMCIOID INTEGER,
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PMENSAJE VARCHAR(100))
+
+	SPECIFIC "SQMNUC".spQRYUsuarioComercio
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+DECLARE V_DYNAMIC VARCHAR(1000);
+DECLARE V_SQL VARCHAR(1000);
+DECLARE V_SQL_SELECT VARCHAR(1000);
+DECLARE V_SQL_WHERE VARCHAR(1000);
+
+-- Declare cursors
+DECLARE CURUSUARIO CURSOR WITH RETURN FOR V_DYNAMIC;
+
+SET V_SQL_SELECT= '';
+SET V_SQL_WHERE = '';
+
+SET V_SQL_SELECT = 'SELECT U.IDUSUARIO, U.IDGRUPO, G.NOMBRE_GRUPO, U.LOGIN, U.PASSWORD, U.NOMBRE, U.APELLIDOP, U.EMAIL, U.ESTADO, G.CMCIO_ID, C.CMCIO_NOMBRE FROM SQMNUC.USUARIO_COMERCIO_CONS U, SQMNUC.GRUPO_COMERCIO G, SQMNUC.COMERCIO C ';
+
+	SET V_SQL_WHERE = ' WHERE U.IDGRUPO = G.IDGRUPO AND G.CMCIO_ID = C.CMCIO_ID ';
+
+	IF RTRIM(COALESCE(PLOGINUSUARIO,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' U.LOGIN LIKE ''%' || PLOGINUSUARIO || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PNOMBRE,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' U.NOMBRE LIKE ''%' || PNOMBRE || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PAPATERNO,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' U.APELLIDOP LIKE ''%' || PAPATERNO || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PEMAIL,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' U.EMAIL LIKE ''%' || PEMAIL || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PIDGRUPO,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' U.IDGRUPO =' || RTRIM(CAST(CAST(PIDGRUPO AS CHAR(3)) AS VARCHAR(3))) || '';
+	END IF;
+
+	IF RTRIM(COALESCE(PCMCIOID,0)) <>0 THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' G.CMCIO_ID =' || RTRIM(CAST(CAST(PCMCIOID AS CHAR(3)) AS VARCHAR(3))) || '';
+	END IF;
+
+
+SET V_SQL = V_SQL_SELECT || V_SQL_WHERE;
+
+PREPARE V_DYNAMIC FROM V_SQL;
+
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+
+	SET PCR = '00';
+	SET PMENSAJE = 'CONSULTA OK';
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spQRYUsuarioComercio TO PUBLIC
+@
+
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spQRYUsuarioVisanet
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spQRYUsuarioVisanet (IN PIDUSUARIOBUSCA INTEGER,
+IN PLOGINUSUARIO VARCHAR(30),
+IN PNOMBRE VARCHAR(50),
+IN PAPATERNO VARCHAR(50),
+IN PEMAIL VARCHAR(50),
+IN PNIVEL INTEGER,
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PMENSAJE VARCHAR(100))
+
+	SPECIFIC "SQMNUC".spQRYUsuarioVisanet
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+DECLARE V_DYNAMIC VARCHAR(1000);
+DECLARE V_SQL VARCHAR(1000);
+DECLARE V_SQL_SELECT VARCHAR(1000);
+DECLARE V_SQL_WHERE VARCHAR(1000);
+
+-- Declare cursors
+DECLARE CURUSUARIO CURSOR WITH RETURN FOR V_DYNAMIC;
+
+SET V_SQL_SELECT= '';
+SET V_SQL_WHERE = '';
+
+SET V_SQL_SELECT = 'SELECT IDUSUARIO, NIVEL, LOGIN, PASSWORD, NOMBRE, APELLIDOP, EMAIL, ESTADO FROM SQMNUC.USUARIO_ADMIN';
+
+	IF RTRIM(COALESCE(PLOGINUSUARIO,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' LOGIN LIKE ''%' || PLOGINUSUARIO || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PNOMBRE,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' NOMBRE LIKE ''%' || PNOMBRE || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PAPATERNO,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' APELLIDOP LIKE ''%' || PAPATERNO || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PEMAIL,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+
+		SET V_SQL_WHERE = V_SQL_WHERE || ' EMAIL LIKE ''%' || PEMAIL || '%''';
+	END IF;
+
+
+SET V_SQL = V_SQL_SELECT || V_SQL_WHERE;
+
+PREPARE V_DYNAMIC FROM V_SQL;
+
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+
+	SET PCR = '00';
+	SET PMENSAJE = 'CONSULTA OK';
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spQRYUsuarioVisanet TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spTotalEmpresa
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spTotalEmpresa (
+IN PIDEMPRESA INTEGER,
+IN PFECHAINI TIMESTAMP,
+IN PFECHAFIN TIMESTAMP,
+IN PSERVICIO INTEGER,
+IN PCR VARCHAR(2)
+)
+
+	SPECIFIC SQMNUC.spTotalEmpresa
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+
+DECLARE V_DYNAMIC VARCHAR(900);
+DECLARE sSQL VARCHAR(900);
+-- Declare cursors
+
+DECLARE curTotEmp CURSOR WITH RETURN FOR V_DYNAMIC;
+
+	SET PFECHAFIN = PFECHAFIN + 1 DAY;
+	SET sSQL = '';
+	SET sSQL = sSQL || ' SELECT LP.LOGPO_CMCIO_ID, COALESCE(C.CMCIO_NOMBRE, '''') AS NOMCOMERCIO, COUNT(LOGPO_IDSESION) AS NUMTRAN, SUM(DOUBLE(LP.LOGPO_IMPORTE_PEDIDO)/100) AS IMPORTETOTAL';
+	SET sSQL = sSQL || ' FROM';
+	SET sSQL = sSQL || ' SQMNUC.LOG_POS_SERV LP';
+	SET sSQL = sSQL || ' LEFT OUTER JOIN SQMNUC.COMERCIO C ON C.CMCIO_ID = LP.LOGPO_CMCIO_ID';
+	SET sSQL = sSQL || ' WHERE';
+	SET sSQL = sSQL || ' LP.LOGPO_CMCIO_ID = ' || VARCHAR(PIDEMPRESA);
+	SET sSQL = sSQL || ' AND LP.LOGPO_FECHAYHORA >= TIMESTAMP_ISO('''  ||  VARCHAR_FORMAT(PFECHAINI, 'YYYY-MM-DD') ||''')';
+	SET sSQL = sSQL || ' AND LP.LOGPO_FECHAYHORA < TIMESTAMP_ISO('''  ||  VARCHAR_FORMAT(PFECHAFIN, 'YYYY-MM-DD') ||''')';
+
+	IF PSERVICIO<>0 THEN
+		SET sSQL = sSQL || ' AND LP.LOGPO_SERVI_CODIGO = ' || VARCHAR(PSERVICIO);
+	END IF;
+
+	IF COALESCE(PCR, '') <>'' THEN
+		SET sSQL = sSQL || ' AND LP.LOGPO_ESTADO_PEDIDO = ''' || PCR || '''';
+	END IF;
+
+	--SET sSQL = sSQL || ' AND LP.LOGPO_FECHAYHORA <= PFECHAFIN';
+	SET sSQL = sSQL || ' GROUP BY LP.LOGPO_CMCIO_ID, COALESCE(C.CMCIO_NOMBRE, '''')';
+	SET sSQL = sSQL || ' ORDER BY LP.LOGPO_CMCIO_ID, COALESCE(C.CMCIO_NOMBRE, '''')';
+
+-- Cursor left open for client application.
+
+	PREPARE V_DYNAMIC FROM sSQL;
+
+	OPEN curTotEmp;
+
+	/*-- Declare cursors
+
+	DECLARE curTotEmpresa CURSOR WITH RETURN FOR
+
+	Select LP.LOGPO_CMCIO_ID, COALESCE(C.CMCIO_NOMBRE, '') AS NOMCOMERCIO, COUNT(LOGPO_IDSESION) AS NUMTRAN, SUM(DOUBLE(LP.LOGPO_IMPORTE_PEDIDO)/100) AS IMPORTETOTAL
+	from SQMNUC.LOG_POS_SERV LP
+	LEFT OUTER JOIN SQMNUC.COMERCIO C ON C.CMCIO_ID = LP.LOGPO_CMCIO_ID
+	WHERE
+	LP.LOGPO_CMCIO_ID = PIDEMPRESA
+	AND LP.LOGPO_FECHAYHORA >= PFECHAINI
+	AND LP.LOGPO_FECHAYHORA <= PFECHAFIN
+	GROUP BY LP.LOGPO_CMCIO_ID, COALESCE(C.CMCIO_NOMBRE, '')
+	ORDER BY LP.LOGPO_CMCIO_ID, COALESCE(C.CMCIO_NOMBRE, '')
+	;
+-- Cursor left open for client application.
+	OPEN curTotEmpresa;*/
+
+
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spTotalEmpresa TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spTotalEmpFecha
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spTotalEmpFecha (
+IN PIDEMPRESA INTEGER,
+IN PFECHAINI TIMESTAMP,
+IN PFECHAFIN TIMESTAMP,
+IN PSERVICIO INTEGER,
+IN PCR VARCHAR(2)
+)
+
+	SPECIFIC SQMNUC.spTotalEmpFecha
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+
+DECLARE V_DYNAMIC VARCHAR(900);
+DECLARE sSQL VARCHAR(900);
+-- Declare cursors
+
+DECLARE curTotEmpFecha CURSOR WITH RETURN FOR V_DYNAMIC;
+
+	SET PFECHAFIN = PFECHAFIN + 1 DAY;
+	SET sSQL = '';
+	SET sSQL = sSQL || ' SELECT LP.LOGPO_CMCIO_ID, COALESCE(C.CMCIO_NOMBRE, '''') AS NOMCOMERCIO, VARCHAR_FORMAT(LP.LOGPO_FECHAYHORA, ''YYYY-MM-DD'') AS FECHA, COUNT(LOGPO_IDSESION) AS NUMTRAN, SUM(DOUBLE(LP.LOGPO_IMPORTE_PEDIDO)/100) AS IMPORTETOTAL';
+	SET sSQL = sSQL || ' FROM';
+	SET sSQL = sSQL || ' SQMNUC.LOG_POS_SERV LP';
+	SET sSQL = sSQL || ' LEFT OUTER JOIN SQMNUC.COMERCIO C ON C.CMCIO_ID = LP.LOGPO_CMCIO_ID';
+	SET sSQL = sSQL || ' WHERE';
+	SET sSQL = sSQL || ' LP.LOGPO_CMCIO_ID = ' || VARCHAR(PIDEMPRESA);
+	SET sSQL = sSQL || ' AND LP.LOGPO_FECHAYHORA >= TIMESTAMP_ISO('''  ||  VARCHAR_FORMAT(PFECHAINI, 'YYYY-MM-DD') ||''')';
+	SET sSQL = sSQL || ' AND LP.LOGPO_FECHAYHORA <= TIMESTAMP_ISO('''  ||  VARCHAR_FORMAT(PFECHAFIN, 'YYYY-MM-DD') ||''')';
+
+	IF PSERVICIO<>0 THEN
+		SET sSQL = sSQL || ' AND LP.LOGPO_SERVI_CODIGO = ' || VARCHAR(PSERVICIO);
+	END IF;
+
+	IF COALESCE(PCR, '') <>'' THEN
+		SET sSQL = sSQL || ' AND LP.LOGPO_ESTADO_PEDIDO = ''' || PCR || '''';
+	END IF;
+
+	--SET sSQL = sSQL || ' AND LP.LOGPO_FECHAYHORA <= PFECHAFIN';
+	SET sSQL = sSQL || ' GROUP BY LP.LOGPO_CMCIO_ID, COALESCE(C.CMCIO_NOMBRE, ''''), VARCHAR_FORMAT(LP.LOGPO_FECHAYHORA, ''YYYY-MM-DD'')';
+	SET sSQL = sSQL || ' ORDER BY LP.LOGPO_CMCIO_ID, COALESCE(C.CMCIO_NOMBRE, ''''), VARCHAR_FORMAT(LP.LOGPO_FECHAYHORA, ''YYYY-MM-DD'')';
+
+-- Cursor left open for client application.
+
+	PREPARE V_DYNAMIC FROM sSQL;
+
+	OPEN curTotEmpFecha;
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spTotalEmpFecha TO PUBLIC
+@
+
+
+
+
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTUpdateComercioConsulta
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTUpdateComercioConsulta (
+IN POPCION CHAR(1),
+IN PIDGRUPO INTEGER,
+IN PCODCOMERCIO VARCHAR(9),
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTUpdateComercioConsulta
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure
+------------------------------------------------------------------------
+P1: BEGIN
+
+IF POPCION = 'A' THEN
+	IF EXISTS (SELECT IDGRUPO FROM SQMNUC.COMERCIO_CONSULTA WHERE IDGRUPO = PIDGRUPO AND CODCOMERCIO = PCODCOMERCIO) THEN
+
+		SET PDESCERROR = 'COMERCIO ' || PCODCOMERCIO || ' YA REGISTRADO';
+		SET PCR='01';
+
+	ELSE
+		INSERT INTO SQMNUC.COMERCIO_CONSULTA (IDGRUPO, CODCOMERCIO, FECHAINSERT, FECHAULTACTUALIZ)
+		VALUES (PIDGRUPO, PCODCOMERCIO, CURRENT TIMESTAMP, CURRENT TIMESTAMP);
+		SET PCR='00';
+		SET PDESCERROR = 'CODIGO ' || PCODCOMERCIO || ' REGISTRADO OK';
+	END IF;
+
+END IF;
+
+
+IF POPCION = 'R' THEN
+	IF EXISTS (SELECT IDGRUPO FROM SQMNUC.COMERCIO_CONSULTA WHERE IDGRUPO = PIDGRUPO AND CODCOMERCIO = PCODCOMERCIO) THEN
+
+		DELETE FROM SQMNUC.COMERCIO_CONSULTA WHERE IDGRUPO = PIDGRUPO AND CODCOMERCIO = PCODCOMERCIO;
+		SET PCR='00';
+		SET PDESCERROR = 'CODIGO ' || PCODCOMERCIO || ' ELIMINADO';
+
+	ELSE
+		SET PDESCERROR = 'COMERCIO' || PCODCOMERCIO || 'NO ESTA ASOCIADO AL GRUPO';
+		SET PCR='01';
+
+		--SET PMENSAJE = 'USUARIO NO EXISTE';
+	END IF;
+
+END IF;
+
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTUpdateComercioConsulta TO PUBLIC
+@

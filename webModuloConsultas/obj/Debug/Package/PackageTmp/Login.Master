@@ -1,0 +1,52 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Login.master.vb" Inherits="webModuloConsultas.Login" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td colspan = "3" style="background-color: #FF9900; line-height: 6px;" > &nbsp;
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td style="font-family: Tahoma; font-weight: bold; color: #003399;">
+                        <asp:Image ID="Image1" runat="server" imageurl="~/Imagenes/NVO.visa-logo.jpg" 
+                            Height="40px" Width="96px"/>
+                        &nbsp;&nbsp;Módulo de consultas de POS Servicios
+                    </td>
+                </tr>
+                <tr>
+                    <td class = "style2" style="background-color: #003399" >
+                       &nbsp;  
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       &nbsp; 
+                    </td>
+                </tr>
+            </table>
+
+        <br />
+
+    </div>
+
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    
+    </div>
+    </form>
+</body>
+</html>

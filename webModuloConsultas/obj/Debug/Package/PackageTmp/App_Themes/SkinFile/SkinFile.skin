@@ -1,0 +1,88 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+
+<asp:LinkButton runat="server"  SkinId="ListViewTitulo" Font-Names="tahoma" Font-Size="8pt" 
+ ForeColor="#000000" Font-Bold="False">
+</asp:LinkButton>
+
+
+<asp:Label runat="server"  SkinId="labelTextSkin" Font-Names="tahoma" Font-Size="8pt" 
+ ForeColor="#000000" Font-Bold="False">
+</asp:Label>
+
+<asp:Label runat="server"  SkinId="labelTitulo" Font-Names="tahoma" Font-Size="8pt" 
+ ForeColor="#1C5E55" Font-Bold="true">
+</asp:Label>
+
+<asp:Label runat="server"  SkinId="labelCabecera" Font-Names="tahoma" Font-Size="8pt" 
+ ForeColor="#003399" Font-Bold="true">
+</asp:Label>
+
+<asp:Label runat="server"  SkinId="labelsubTituloSkin" Font-Names="tahoma" Font-Size="8pt" 
+ ForeColor="#ffffff" Font-Bold="true">
+</asp:Label>
+
+<asp:textbox runat="server"  SkinId="CajaTextoSkinNum" Font-Names="tahoma" Font-Size="8pt" 
+ ForeColor="#666666" class="ToUpper" onkeyup="extractNumber(this,2,false);"
+  Font-Bold="False" height="10px">
+</asp:textbox>
+
+<asp:textbox runat="server"  SkinId="CajaTextoSkin" Font-Names="tahoma" Font-Size="8pt"      
+ ForeColor="#666666" class="ToUpper" Font-Bold="False" height="10px">
+</asp:textbox>
+ 
+<asp:textbox runat="server"  SkinId="CajaTextoBloqueadoSkin" Font-Names="tahoma" Font-Size="8pt"
+ BackColor="WhiteSmoke" class="ToUpper" Font-Bold="False" height="10px" ForeColor="Black">
+</asp:textbox>
+
+<asp:DropDownList runat="server"  SkinId="DropDownListSkin" Font-Names="tahoma" Font-Size="8pt" 
+ ForeColor="#666666" Font-Bold="False">
+</asp:DropDownList>
+
+<asp:RadioButton runat="server" SkinId="RadioButtonSkin"  Font-Names="tahoma" Font-Size="8pt" 
+Width="100px" />
+
+<asp:RadioButtonList runat="server" SkinId="RadioButtonListSkin"  Font-Names="tahoma" Font-Size="8pt" 
+ />
+
+<asp:ListBox runat="server" SkinId="DropDownListSkin"  Font-Names="tahoma" Font-Size="8pt" 
+ />
+
+<asp:Button runat="server"  SkinId="ButtonTextSkin" Font-Names="tahoma" Font-Size="8pt" 
+ ForeColor="#FFFFFF" BackColor="#003399" Font-Bold="False" >
+</asp:Button>
+
+<asp:TextBox runat="server"  SkinId="TextBoxAreaSkinText"  Font-Names="tahoma" Font-Size="8pt" 
+ ForeColor="#666666" Font-Bold="False"   class="ToUpper" height="45px">
+</asp:TextBox>
+
+<asp:GridView runat="server" SkinId="gridviewSkin" Font-Names="tahoma" Font-Size="8pt" ForeColor="#333333"
+ AutoGenerateColumns="False" GridLines="None" >
+                    <AlternatingRowStyle BackColor="White" />
+                    <EditRowStyle BackColor="#2461BF" />
+                    <FooterStyle BackColor="#003399" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EFF3FB" />
+                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
+<PagerSettings mode="NumericFirstLast" FirstPageText="Primero" FirstPageImageUrl="Imagenes/grilla/first.gif" PreviousPageText="Anterior" PreviousPageImageUrl="Imagenes/grilla/previous.gif" NextPageText="Siguiente" NextPageImageUrl="Imagenes/grilla/next.gif" LastPageText="Ultimo" LastPageImageUrl="Imagenes/grilla/last.gif" Position="Top"></PagerSettings>                                                     
+</asp:GridView> 
+

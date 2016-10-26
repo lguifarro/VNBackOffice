@@ -1,0 +1,66 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spTotalEmpFecha
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spTotalEmpFecha (
+IN PIDEMPRESA INTEGER,
+IN PFECHAINI TIMESTAMP, 
+IN PFECHAFIN TIMESTAMP,
+IN PSERVICIO INTEGER, 
+IN PCR VARCHAR(2)
+)
+
+	SPECIFIC SQMNUC.spTotalEmpFecha
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+P1: BEGIN
+
+DECLARE V_DYNAMIC VARCHAR(900);
+DECLARE sSQL VARCHAR(900);
+-- Declare cursors
+
+DECLARE curTotEmpFecha CURSOR WITH RETURN FOR V_DYNAMIC;
+
+	SET PFECHAFIN = PFECHAFIN + 1 DAY;
+	SET sSQL = '';
+	SET sSQL = sSQL || ' SELECT LP.LOGPO_CMCIO_ID, COALESCE(C.CMCIO_NOMBRE, '''') AS NOMCOMERCIO, VARCHAR_FORMAT(LP.LOGPO_FECHAYHORA, ''YYYY-MM-DD'') AS FECHA, COUNT(LOGPO_IDSESION) AS NUMTRAN, SUM(DOUBLE(LP.LOGPO_IMPORTE_PEDIDO)/100) AS IMPORTETOTAL';
+	SET sSQL = sSQL || ' FROM';
+	SET sSQL = sSQL || ' SQMNUC.LOG_POS_SERV LP';
+	SET sSQL = sSQL || ' LEFT OUTER JOIN SQMNUC.COMERCIO C ON C.CMCIO_ID = LP.LOGPO_CMCIO_ID';
+	SET sSQL = sSQL || ' WHERE';
+	SET sSQL = sSQL || ' LP.LOGPO_CMCIO_ID = ' || VARCHAR(PIDEMPRESA);
+	SET sSQL = sSQL || ' AND LP.LOGPO_FECHAYHORA >= TIMESTAMP_ISO('''  ||  VARCHAR_FORMAT(PFECHAINI, 'YYYY-MM-DD') ||''')';
+	SET sSQL = sSQL || ' AND LP.LOGPO_FECHAYHORA <= TIMESTAMP_ISO('''  ||  VARCHAR_FORMAT(PFECHAFIN, 'YYYY-MM-DD') ||''')';
+
+	IF PSERVICIO<>0 THEN
+		SET sSQL = sSQL || ' AND LP.LOGPO_SERVI_CODIGO = ' || VARCHAR(PSERVICIO);
+	END IF;
+
+	IF COALESCE(PCR, '') <>'' THEN
+		SET sSQL = sSQL || ' AND LP.LOGPO_ESTADO_PEDIDO = ''' || PCR || '''';
+	END IF;
+
+	--SET sSQL = sSQL || ' AND LP.LOGPO_FECHAYHORA <= PFECHAFIN';
+	SET sSQL = sSQL || ' GROUP BY LP.LOGPO_CMCIO_ID, COALESCE(C.CMCIO_NOMBRE, ''''), VARCHAR_FORMAT(LP.LOGPO_FECHAYHORA, ''YYYY-MM-DD'')';
+	SET sSQL = sSQL || ' ORDER BY LP.LOGPO_CMCIO_ID, COALESCE(C.CMCIO_NOMBRE, ''''), VARCHAR_FORMAT(LP.LOGPO_FECHAYHORA, ''YYYY-MM-DD'')';
+
+-- Cursor left open for client application.
+
+	PREPARE V_DYNAMIC FROM sSQL;
+
+	OPEN curTotEmpFecha;
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spTotalEmpFecha TO PUBLIC
+@

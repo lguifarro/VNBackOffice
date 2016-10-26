@@ -1,0 +1,84 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spLOGINWebComercio
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spLOGINWebComercio (
+IN PUSUARIOLOGIN VARCHAR(20),
+IN PPASSWORD VARCHAR(20),
+OUT PIDUSUARIO INTEGER,
+OUT PIDGRUPO INTEGER,
+OUT PNOMGRUPO VARCHAR(50),
+OUT PFLAGADMIN INTEGER,
+OUT CR CHAR(2),
+OUT PMENSAJE VARCHAR(100) )
+	SPECIFIC "SQMNUC".spLOGINWebComercio
+	LANGUAGE SQL
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+P1: BEGIN
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+DECLARE SQLCODE INTEGER DEFAULT 0;
+declare iIdUsuario INTEGER;
+declare iIdGrupo INTEGER;
+declare iFlagAdmin INTEGER;
+declare sPassword varchar(20);
+declare sNomComercio varchar(50);
+declare sNomGrupo varchar(50);
+declare sNombre varchar(30);
+declare sApellidoP varchar(30);
+declare sEmail varchar(50);
+
+DECLARE curUsuario CURSOR FOR
+SELECT	UG.IDUSUARIO, UG.PASSWORD, UG.IDGRUPO, UG.NOMBRE, UG.APELLIDOP, UG.EMAIL, COALESCE(GC.NOMBRE_GRUPO,''), COALESCE(UG.FLAGADMIN, 0)
+FROM SQMNUC.USUARIO_COMERCIO_CONS  UG, SQMNUC.GRUPO_COMERCIO GC
+WHERE
+UG.LOGIN = PUSUARIOLOGIN
+AND UG.IDGRUPO = GC.IDGRUPO;
+--AND CO.CMCIO_ID = UC.CMCIO_ID;
+--AND U.USUARIO_PASSWORD = PPASSWORD;
+
+OPEN curUsuario;
+fetch curUsuario 
+into iIdUsuario, sPassword, iIdGrupo, sNombre, sApellidoP, sEmail, sNomGrupo, iFlagAdmin;
+
+IF (SQLCODE = 0) THEN
+
+	IF (sPassword = PPASSWORD) THEN
+		SET PMENSAJE = 'LOGIN OK';
+		SET PIDUSUARIO = iIdUsuario;
+		SET PIDGRUPO = iIdGrupo;
+		SET PNOMGRUPO = sNomGrupo;
+		SET PFLAGADMIN = iFlagAdmin;
+		--SET PNOMCOMERCIO = sNomComercio;
+		SET CR='00';
+	ELSE
+		--SET PMENSAJE = 'PASSWORD NO COINCIDE';
+		SET PMENSAJE = 'VERIFIQUE SU NOMBRE DE USUARIO Y CONTRASEÑA';
+		SET CR='02';
+	END IF;
+
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PMENSAJE = 'VERIFIQUE SU NOMBRE DE USUARIO Y CONTRASEÑA';
+	SET CR='01';
+END IF;
+close curUsuario;
+
+END P1
+
+@
+COMMENT ON  SPECIFIC PROCEDURE "SQMNUC".spLOGINWebComercio IS 'Login para el modulo de consultas web de comercios'
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spLOGINWebComercio TO PUBLIC
+@

@@ -1,0 +1,9 @@
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\bin\Debug\ClsConsultas.dll
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\bin\Debug\ClsConsultas.pdb
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\bin\Debug\ClsConsultas.xml
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\obj\Debug\ClsConsultas.Resources.resources
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\obj\Debug\ClsConsultas.dll
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\obj\Debug\ClsConsultas.xml
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\obj\Debug\ClsConsultas.pdb
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\bin\Debug\IBM.Data.DB2.dll
+D:\Visual Studio Projects\Desarrollo\slnModuloConsultas\ClsConsultaDB\obj\Debug\ClsConsultas.vbproj.GenerateResource.Cache

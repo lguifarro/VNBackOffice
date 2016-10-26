@@ -1,0 +1,96 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE "SQMNUC".spQRYUsuarioVisanet
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE "SQMNUC".spQRYUsuarioVisanet (IN PIDUSUARIOBUSCA INTEGER, 
+IN PLOGINUSUARIO VARCHAR(30), 
+IN PNOMBRE VARCHAR(50), 
+IN PAPATERNO VARCHAR(50), 
+IN PEMAIL VARCHAR(50), 
+IN PNIVEL INTEGER, 
+IN PIDUSUARIO INTEGER, 
+OUT PCR CHAR(2),
+OUT PMENSAJE VARCHAR(100))
+
+	SPECIFIC "SQMNUC".spQRYUsuarioVisanet
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+P1: BEGIN
+DECLARE V_DYNAMIC VARCHAR(1000);
+DECLARE V_SQL VARCHAR(1000);
+DECLARE V_SQL_SELECT VARCHAR(1000);
+DECLARE V_SQL_WHERE VARCHAR(1000);
+
+-- Declare cursors
+DECLARE CURUSUARIO CURSOR WITH RETURN FOR V_DYNAMIC;
+
+SET V_SQL_SELECT= '';
+SET V_SQL_WHERE = '';
+
+SET V_SQL_SELECT = 'SELECT IDUSUARIO, NIVEL, LOGIN, PASSWORD, NOMBRE, APELLIDOP, EMAIL, ESTADO FROM SQMNUC.USUARIO_ADMIN';
+
+	IF RTRIM(COALESCE(PLOGINUSUARIO,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+	
+		SET V_SQL_WHERE = V_SQL_WHERE || ' LOGIN LIKE ''%' || PLOGINUSUARIO || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PNOMBRE,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+	
+		SET V_SQL_WHERE = V_SQL_WHERE || ' NOMBRE LIKE ''%' || PNOMBRE || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PAPATERNO,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+	
+		SET V_SQL_WHERE = V_SQL_WHERE || ' APELLIDOP LIKE ''%' || PAPATERNO || '%''';
+	END IF;
+
+	IF RTRIM(COALESCE(PEMAIL,'')) <>'' THEN
+		IF V_SQL_WHERE ='' THEN
+			SET V_SQL_WHERE = V_SQL_WHERE || ' WHERE';
+		ELSE
+			SET V_SQL_WHERE = V_SQL_WHERE || ' AND';
+		END IF;
+	
+		SET V_SQL_WHERE = V_SQL_WHERE || ' EMAIL LIKE ''%' || PEMAIL || '%''';
+	END IF;
+
+
+SET V_SQL = V_SQL_SELECT || V_SQL_WHERE;
+
+PREPARE V_DYNAMIC FROM V_SQL;
+
+-- Cursor left open for client application.
+	OPEN CURUSUARIO;
+
+	SET PCR = '00';
+	SET PMENSAJE = 'CONSULTA OK';
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE "SQMNUC".spQRYUsuarioVisanet TO PUBLIC
+@

@@ -1,0 +1,175 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="PrincipalVisanet.master.vb" Inherits="webModuloConsultas.PrincipalVisanet" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title>Módulo de consulta de transacciones</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="App_Themes/SkinFile/MasterPage.css" rel="stylesheet" type="text/css" />
+    <link href="App_Themes/SkinFile/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 543px;
+            height: 50px;
+            text-align: center ;
+        }
+        .style2
+        {
+            height: 29px;
+            width: 543px;
+            background-image: url('App_Themes/SkinFile/Imagenes/bk_menu.jpg');
+        }
+        .style3
+        {
+            height: 21px;
+            width: 299px;
+            background-image: url('App_Themes/SkinFile/Imagenes/bk_menu.jpg');
+        }
+    </style>
+</head>
+<body>
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization ="true">
+    </asp:ScriptManager>
+
+    <form id="form1" runat="server">
+
+        <%--Menú--%>
+        <div id="divMenu">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td colspan = "3" style="background-color: #FF9900; line-height: 6px;" > &nbsp;
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td style="font-family: Tahoma; font-weight: bold; color: #003399;">
+                        <asp:Image ID="Image1" runat="server" imageurl="~/Imagenes/NVO.visa-logo.jpg" 
+                            Height="40px" Width="96px"/>
+                        &nbsp;&nbsp;Módulo de consultas de POS Servicios - VisaNet
+                    </td>
+                    <td colspan = "2" style="background-color: #FFFFFF; text-align: right;" >
+                        <asp:Label ID="lLogin" runat="server" Text="Label" skinid="labelCabecera"></asp:Label>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td class = "style2" style="background-color: #003399" >
+                        <asp:Menu ID="menuPrincipal" runat="server" 
+                                            Orientation="Horizontal" 
+                                            MaximumDynamicDisplayLevels ="2"  
+                                            StaticSubMenuIndent="" 
+                                            DynamicHorizontalOffset="2"  
+                                            Font-Names="Tahoma" 
+                                            Font-Size="12px" 
+                                            ForeColor="White"
+                                            Font-Underline="false" 
+                                            BorderColor="Black" 
+                                            Height="20" 
+                                            ItemSpacing="8" 
+                                            VerticalPadding="0"
+                                            BackColor ="#003399">
+                                        <StaticMenuItemStyle HorizontalPadding="0px" VerticalPadding="6px"  />
+                                        <DynamicHoverStyle BackColor="#e2e2e2" ForeColor="Black" BorderColor="#eeeeee" />
+                                        <DynamicMenuStyle ForeColor="Black"/>
+                                        <StaticSelectedStyle BackColor="#4a7ab1"  ForeColor="Black"/>
+                                        <DynamicSelectedStyle BackColor="#4a7ab1" ForeColor="Black"/>
+                                        <DynamicMenuItemStyle HorizontalPadding="6px" VerticalPadding="4px" ForeColor="Black" BorderColor="#dfdfdf" BackColor="#f4f4f4" BorderWidth="1" width ="150" />
+                                        <StaticHoverStyle BackColor="#dfe8f6" ForeColor="black"  Height="18" BorderColor="Black"/>
+
+                            <Items>
+                                <asp:MenuItem Text="Consultas">
+                                    <asp:MenuItem Text="Consulta de transacciones" NavigateUrl="~/frmConsultaVisanet.aspx" ></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Administrar">
+                                    <asp:MenuItem Text="Usuarios administradores" NavigateUrl="~/frmQRYUsuarioVisanet.aspx" ></asp:MenuItem>
+                                    <asp:MenuItem Text="Grupos de comercios" NavigateUrl="~/frmQRYGrupoComercio.aspx" ></asp:MenuItem>
+                                    <asp:MenuItem Text="Servicios por grupo" NavigateUrl="~/frmQRYServicioConsulta.aspx" ></asp:MenuItem>
+                                    <asp:MenuItem Text="Comercios por grupo" NavigateUrl="~/frmQRYComercioConsulta.aspx" ></asp:MenuItem>
+                                    <asp:MenuItem Text="Usuarios por grupo" NavigateUrl="~/frmQRYUsuarioComercio.aspx" ></asp:MenuItem>
+                                    <asp:MenuItem Text="Servicios por proveedor" NavigateUrl="~/frmQRYServicioEmpresa.aspx" ></asp:MenuItem>
+                                    <asp:MenuItem Text="Tarifas" NavigateUrl="~/frmQRYTarifaEmpresa.aspx" ></asp:MenuItem>
+                                </asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+                    </td>
+
+                    <td class = "style3" 
+                        style="font-style: normal; font-family: Tahoma; color: white; font-size: 9px; background-color: #003399" 
+                        align="center">
+                        <asp:Menu ID="mnuOpc" runat="server" 
+                                            Orientation="Horizontal" 
+                                            MaximumDynamicDisplayLevels ="2"  
+                                            StaticSubMenuIndent="" 
+                                            DynamicHorizontalOffset="2"  
+                                            Font-Names="Tahoma" 
+                                            Font-Size="9px" 
+                                            ForeColor="White"
+                                            Font-Underline="false" 
+                                            BorderColor="Black" 
+                                            Height="20" 
+                                            ItemSpacing="8" 
+                                            VerticalPadding="0"
+                                            BackColor ="#003399">
+                                        <StaticMenuItemStyle HorizontalPadding="0px" VerticalPadding="6px"  />
+                                        <DynamicHoverStyle BackColor="#e2e2e2" ForeColor="Black" BorderColor="#eeeeee" />
+                                        <DynamicMenuStyle ForeColor="Black"/>
+                                        <StaticSelectedStyle BackColor="#4a7ab1"  ForeColor="Black"/>
+                                        <DynamicSelectedStyle BackColor="#4a7ab1" ForeColor="Black"/>
+                                        <DynamicMenuItemStyle HorizontalPadding="6px" VerticalPadding="4px" ForeColor="Black" BorderColor="#dfdfdf" BackColor="#f4f4f4" BorderWidth="1" width ="150" />
+                                        <StaticHoverStyle BackColor="#dfe8f6" ForeColor="black"  Height="18" BorderColor="Black"/>
+
+                            <Items>
+
+                            </Items>
+                        </asp:Menu>
+                    </td>
+                    <td class = "tdbk_menu"  style="font-style: normal; font-family: Tahoma; color: white; font-size: 9px; height: 21px; width:108px; background-color: #003399" align="center">
+                        <asp:LinkButton id="LinkButton1"  runat="server" forecolor="white" postbackurl="~/frmLoginVisanet.aspx">CERRAR SESIÓN</asp:LinkButton>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div id="divMasterPage">
+
+            <div id="divMasterContent">
+
+                <%--Tool Bar--%>
+
+                <%--Contenido--%>
+                <div id="master_contentplaceholder">
+                    <table  border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td valign="top" class = "baseFormulario" >
+                            <div id="master_contentbody">
+                                <asp:contentplaceholder id="CPHPrincipal" runat="server" />
+                            </div>   
+                        </td> 
+                    </tr>
+                    </table>
+                </div>
+
+                <%--Footer Bar--%>
+                <%--<div id="master_contentfooter">
+                  <table style="width:900px;height:45px;" border="0" cellspacing="0" cellpadding="0">
+                  <tr align="center" style="height:10px">
+                    <td style="width: 100%" class="baseFormulario"  >
+                        <asp:Label ID="Label1" runat="server" Text="Pruebas JLV"></asp:Label><br />
+                    </td>
+                  </tr>
+                  </table >
+                </div>--%>
+            </div>
+
+        </div>
+
+
+
+
+    </form>
+</body>
+</html>

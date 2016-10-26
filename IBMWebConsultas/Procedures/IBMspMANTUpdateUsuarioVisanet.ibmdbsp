@@ -1,0 +1,55 @@
+-- <ScriptOptions statementSeparator="@"/>
+-- <ScriptOptions errors="off" platform390="off"/>
+@
+-- Drop the stored procedure if one already exists
+DROP SPECIFIC PROCEDURE SQMNUC.spMANTUpdateUsuarioVisanet 
+@
+COMMIT
+@
+-- <ScriptOptions errors="on"/>
+@
+-- Create stored procedure
+CREATE PROCEDURE SQMNUC.spMANTUpdateUsuarioVisanet ( 
+IN PIDUSUARIOCONSULTA INTEGER,
+IN PLOGINUSUARIO VARCHAR(20),
+IN PNOMBRE VARCHAR(50),
+IN PAPELLIDOP VARCHAR(50),
+IN PEMAIL VARCHAR(50),
+IN PNIVEL INTEGER,
+IN PESTADOUSUARIO VARCHAR(1),
+IN PIDUSUARIO INTEGER,
+OUT PCR CHAR(2),
+OUT PDESCERROR VARCHAR(100) )
+	SPECIFIC SQMNUC.spMANTUpdateUsuarioVisanet 
+	LANGUAGE SQL
+	DYNAMIC RESULT SETS 1
+------------------------------------------------------------------------
+-- SQL Stored Procedure 
+------------------------------------------------------------------------
+P1: BEGIN
+
+IF EXISTS (SELECT IDUSUARIO FROM SQMNUC.USUARIO_ADMIN WHERE IDUSUARIO = PIDUSUARIOCONSULTA) THEN
+
+	UPDATE SQMNUC.USUARIO_ADMIN 
+	SET
+		NOMBRE = PNOMBRE, 
+		APELLIDOP = PAPELLIDOP, 
+		EMAIL = PEMAIL, 
+		NIVEL = PNIVEL, 
+		ESTADO = PESTADOUSUARIO, 
+		FECHAULTACTUALIZ = CURRENT TIMESTAMP
+	WHERE IDUSUARIO = PIDUSUARIOCONSULTA;
+
+	SET PDESCERROR = 'ACTUALIZACION OK';
+	SET PCR='00';
+ELSE
+	--SET PMENSAJE = 'USUARIO NO EXISTE';
+	SET PDESCERROR = 'USUARIO NO ENCONTRADO';
+	SET PCR='01';
+END IF;
+
+END P1
+@
+-- Grant access privilages to stored procedure
+GRANT EXECUTE ON SPECIFIC PROCEDURE SQMNUC.spMANTUpdateUsuarioVisanet TO PUBLIC
+@
